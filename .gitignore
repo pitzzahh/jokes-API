@@ -16,6 +16,8 @@ target/
 ### IntelliJ IDEA ###
 *.iws
 *.ipr
+identifier.sqlite
+.idea/
 
 ### NetBeans ###
 /nbproject/private/
