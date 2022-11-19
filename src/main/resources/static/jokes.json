@@ -1,56 +1,51 @@
 [
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "Why do fathers take an extra pair of socks when they go golfing? In case they get a hole in one!"
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "I'm afraid for the calendar. Its days are numbered."
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "My wife said I should do lunges to stay in shape. That would be a big step forward."
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "What do a tick and the Eiffel Tower have in common? They're both Paris sites."
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "What do you call a fish wearing a bowtie? \"Sofishticated.\""
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "How do you follow Will Smith in the snow? You follow the fresh prints."
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "If April showers bring May flowers, what do May flowers bring?\"Pilgrims\"."
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "What do you call a fake noodle? An \"impasta\"."
   },
   {
-    "categories": [
-      "DAD_JOKE"
-    ],
+    "category": "DAD_JOKE",
     "joke": "What do you call a belt made out of watches? A \"waist of time\"."
+  },
+  {
+    "category": "DAD_JOKE",
+    "joke": "I thought the dryer was shrinking my clothes. Turns out it was the refrigerator all along."
+  },
+  {
+    "category": "DAD_JOKE",
+    "joke": "What do you call a factory that makes okay products? A \"SatisFACTORY\""
+  },
+  {
+    "category": "DAD_JOKE",
+    "joke": "What did the janitor say when he jumped out of the closet? \"Supplies!\""
   }
+
 ]
