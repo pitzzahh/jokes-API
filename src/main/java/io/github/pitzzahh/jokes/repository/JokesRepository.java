@@ -13,4 +13,5 @@ public interface JokesRepository {
      * @see Joke
      */
     List<Joke> getJokes();
+
 }
