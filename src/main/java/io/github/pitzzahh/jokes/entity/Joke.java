@@ -7,8 +7,8 @@ import org.hibernate.Hibernate;
 import javax.persistence.Id;
 import java.util.Objects;
 import lombok.*;
+@Entity(name = "jokes")
 @Table
-@Entity
 @Getter
 @Setter
 @Builder
