@@ -40,20 +40,16 @@ public interface Utility {
      * @see Joke
      */
     static boolean doesJokeExist(JokesRepository jokesRepository, String joke) {
-        List<String[]> reduce = jokesRepository
+        AtomicInteger count = new AtomicInteger(0);
+        String[] split = joke.split("\\s");
+        jokesRepository
                 .findAll()
                 .stream()
                 .map(j -> j.getJoke().split("\\s"))
-                .toList();
-
-        AtomicInteger count = new AtomicInteger(0);
-
-        String[] split = joke.split("\\s");
-        reduce.forEach(str ->
-                Arrays.stream(split)
+                .forEach(str -> Arrays.stream(split)
                         .filter(s -> isPresent(str, s))
                         .forEachOrdered(s -> count.incrementAndGet())
-        );
+                );
         return count.get() >= split.length;
     }
 
