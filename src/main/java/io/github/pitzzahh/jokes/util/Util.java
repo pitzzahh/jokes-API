@@ -1,6 +1,7 @@
 package io.github.pitzzahh.jokes.util;
 
-import io.github.pitzzahh.jokes.model.Joke;
+import io.github.pitzzahh.jokes.entity.Category;
+import io.github.pitzzahh.jokes.entity.Joke;
 import org.json.simple.parser.*;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -10,25 +11,19 @@ import java.util.List;
 
 public interface Util {
 
-    @SuppressWarnings("unchecked")
     static Optional<List<Joke>> getJokes() {
         JSONParser parser = new JSONParser();
         List<Joke> jokes = new ArrayList<>();
         try {
             JSONArray a = (JSONArray) parser.parse(new FileReader("src/main/resources/static/jokes.json"));
 
-
             for (Object o : a) {
-
                 JSONObject joke = (JSONObject) o;
-                JSONArray categories = (JSONArray) joke.get("categories");
-
-                String jokeText = (String) joke.get("joke");
-
                 jokes.add(
                         Joke.builder()
-                                .categories(categories)
-                                .joke(jokeText)
+                                .id(Integer.parseInt((String) joke.get("id")))
+                                .category(Category.valueOf((String) joke.get("category")))
+                                .joke((String) joke.get("joke"))
                                 .build()
                 );
             }
