@@ -1,3 +1,16 @@
 spring:
   application:
     name: jokes-api
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:identifier.sqlite
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.SQLiteDialect
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true

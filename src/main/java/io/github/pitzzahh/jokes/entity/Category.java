@@ -1,4 +1,4 @@
-package io.github.pitzzahh.jokes.model;
+package io.github.pitzzahh.jokes.entity;
 
 public enum Category {
     ANY,

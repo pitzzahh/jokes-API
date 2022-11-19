@@ -1,6 +1,6 @@
 package io.github.pitzzahh.jokes.controller;
 
-import io.github.pitzzahh.jokes.model.Joke;
+import io.github.pitzzahh.jokes.entity.Joke;
 import io.github.pitzzahh.jokes.service.JokesService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
