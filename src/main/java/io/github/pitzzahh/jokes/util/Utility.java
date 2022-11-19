@@ -1,5 +1,6 @@
 package io.github.pitzzahh.jokes.util;
 
+import static io.github.pitzzahh.util.utilities.Util.isPresent;
 import io.github.pitzzahh.jokes.repository.JokesRepository;
 import java.util.concurrent.atomic.AtomicInteger;
 import io.github.pitzzahh.jokes.entity.Category;
@@ -53,15 +54,4 @@ public interface Utility {
         return count.get() >= split.length;
     }
 
-    /**
-     * Method that searches an array, returns true if the value is present, otherwise false.
-     * @param arr the array that extends the {@code Number} class.
-     * @param whatToFind the number to find in the array.
-     * @return {@code true} if {@code whatToFind} is present in the array.
-     * @param <T> the type that the {@code arr} and {@code whatToFind}
-     * @see Number
-     */
-    private static <T> boolean isPresent(T[] arr, T whatToFind) {
-        return Arrays.asList(arr).contains(whatToFind);
-    }
 }
