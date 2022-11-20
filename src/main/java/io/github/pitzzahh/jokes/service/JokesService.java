@@ -80,7 +80,8 @@ public record JokesService(JokesRepository jokesRepository) {
      */
     // TODO: remove after using
     public Status saveAll() throws IOException, ParseException {
-        jokesRepository.saveAll(Utility.getJokes());
+        Utility.getJokes()
+                .forEach(this::addJoke);
         return Status.SUCCESS;
     }
 
