@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import io.github.pitzzahh.jokes.entity.Category;
 import io.github.pitzzahh.jokes.entity.Joke;
 import org.json.simple.parser.*;
-import lombok.SneakyThrows;
+import java.io.IOException;
 import java.io.FileReader;
 import org.json.simple.*;
 import java.util.Arrays;
@@ -18,11 +18,9 @@ public interface Utility {
      * Gets the jokes from a local JSON file
      * @return a list of jokes
      */
-    @SneakyThrows
     @SuppressWarnings("unchecked")
-    static List<Joke> getJokes() {
-        JSONParser parser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) parser.parse(new FileReader("src/main/resources/static/jokes.json"));
+    static List<Joke> getJokes() throws IOException, ParseException {
+        JSONArray jsonArray = (JSONArray) new JSONParser().parse(new FileReader("src/main/resources/static/jokes.json"));
         return jsonArray.stream()
                 .map(JSONObject.class::cast)
                 .map(o -> Joke.builder()

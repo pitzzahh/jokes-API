@@ -11,16 +11,16 @@
 	</parent>
 
 	<groupId>io.github.pitzzahh</groupId>
-	<artifactId>jokes</artifactId>
+	<artifactId>jokes-API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>jokes</name>
-	<url>https://github.com/pitzzahh/jokes</url>
+	<name>${artifactId}</name>
+	<url>https://github.com/pitzzahh/jokes-API</url>
 
 	<description>API that generates random jokes</description>
 
 	<properties>
-		<java.version>17</java.version>
+		<java.version>19</java.version>
 	</properties>
 
 	<dependencies>
