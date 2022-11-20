@@ -14,7 +14,7 @@
 	<artifactId>jokes-API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>${artifactId}</name>
+	<name>${project.artifactId}</name>
 	<url>https://github.com/pitzzahh/jokes-API</url>
 
 	<description>API that generates random jokes</description>
