@@ -26,7 +26,6 @@ package io.github.pitzzahh.jokes.util;
 
 import static io.github.pitzzahh.util.utilities.Util.isPresent;
 import io.github.pitzzahh.jokes.repository.JokesRepository;
-import java.util.concurrent.atomic.AtomicInteger;
 import io.github.pitzzahh.jokes.entity.Category;
 import io.github.pitzzahh.jokes.entity.Joke;
 import org.json.simple.parser.*;
@@ -63,17 +62,11 @@ public interface Utility {
      * @see Joke
      */
     static boolean doesJokeExist(JokesRepository jokesRepository, String joke) {
-        AtomicInteger count = new AtomicInteger(0);
-        String[] split = joke.split("\\s");
-        jokesRepository
+        return jokesRepository
                 .findAll()
                 .stream()
                 .map(j -> j.getJoke().split("\\s"))
-                .forEach(str -> Arrays.stream(split)
-                        .filter(s -> isPresent(str, s))
-                        .forEachOrdered(s -> count.incrementAndGet())
-                );
-        return count.get() >= split.length;
+                .anyMatch(str -> Arrays.stream(joke.split("\\s")).allMatch(s -> isPresent(str, s)));
     }
 
 }
