@@ -43,7 +43,7 @@ public interface Utility {
      */
     @SuppressWarnings("unchecked")
     static List<Joke> getJokes() throws IOException, ParseException {
-        JSONArray jsonArray = (JSONArray) new JSONParser().parse(new FileReader("src/main/resources/static/jokes.json"));
+        JSONArray jsonArray = (JSONArray) new JSONParser().parse(new FileReader("jokes.json"));
         return jsonArray.stream()
                 .map(JSONObject.class::cast)
                 .map(o -> Joke.builder()
