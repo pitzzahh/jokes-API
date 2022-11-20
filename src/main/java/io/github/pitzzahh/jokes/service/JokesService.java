@@ -3,8 +3,10 @@ package io.github.pitzzahh.jokes.service;
 import io.github.pitzzahh.util.utilities.classes.enums.Status;
 import io.github.pitzzahh.jokes.repository.JokesRepository;
 import org.springframework.stereotype.Service;
+import org.json.simple.parser.ParseException;
 import io.github.pitzzahh.jokes.util.Utility;
 import io.github.pitzzahh.jokes.entity.Joke;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -53,7 +55,7 @@ public record JokesService(JokesRepository jokesRepository) {
      * @see Utility#getJokes()
      */
     // TODO: remove after using
-    public Status saveAll() {
+    public Status saveAll() throws IOException, ParseException {
         jokesRepository.saveAll(Utility.getJokes());
         return Status.SUCCESS;
     }
