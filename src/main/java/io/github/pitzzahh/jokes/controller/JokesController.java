@@ -49,7 +49,7 @@ public record JokesController(JokesService jokesService) {
         return jokesService.addJoke(joke);
     }
 
-    @RequestMapping("/save")
+    @PostMapping("/save")
     public Status saveAll() throws IOException, ParseException {
         return jokesService.saveAll();
     }
