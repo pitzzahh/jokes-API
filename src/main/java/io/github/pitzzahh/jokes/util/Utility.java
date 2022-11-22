@@ -74,7 +74,7 @@ public interface Utility {
      * @param jokesRepository the jokes repository
      * @return true if the joke exists, false otherwise
      */
-    static Joke pickRandomJoke(JokesRepository jokesRepository) {
+    static Joke pickRandomJoke(JokesRepository jokesRepository, Category category) {
         List<Joke> jokes = jokesRepository.findAll();
         return jokes.isEmpty() ? new Joke() : jokes.get((int) (Math.random() * jokes.size()));
     }

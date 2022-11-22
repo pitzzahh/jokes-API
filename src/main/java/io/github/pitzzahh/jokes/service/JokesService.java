@@ -54,7 +54,7 @@ public record JokesService(JokesRepository jokesRepository) {
      * @return a random joke
      */
     public Joke generateRandomJoke() {
-        return Utility.pickRandomJoke(jokesRepository);
+        return Utility.pickRandomJoke(jokesRepository, Category.ANY);
     }
 
     /**
