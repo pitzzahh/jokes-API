@@ -69,4 +69,14 @@ public interface Utility {
                 .anyMatch(str -> Arrays.stream(joke.split("\\s")).allMatch(s -> isPresent(str, s)));
     }
 
+    /**
+     * Checks if a joke exists in the database
+     * @param jokesRepository the jokes repository
+     * @return true if the joke exists, false otherwise
+     */
+    static Joke pickRandomJoke(JokesRepository jokesRepository) {
+        List<Joke> jokes = jokesRepository.findAll();
+        return jokes.isEmpty() ? new Joke() : jokes.get((int) (Math.random() * jokes.size()));
+    }
+
 }

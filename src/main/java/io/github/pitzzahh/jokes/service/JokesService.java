@@ -54,8 +54,7 @@ public record JokesService(JokesRepository jokesRepository) {
      * @return a random joke
      */
     public Joke generateRandomJoke() {
-        List<Joke> jokes = jokesRepository.findAll();
-        return jokes.isEmpty() ? new Joke() : jokes.get((int) (Math.random() * jokes.size()));
+        return Utility.pickRandomJoke(jokesRepository);
     }
 
     /**
