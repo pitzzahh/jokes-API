@@ -24,12 +24,15 @@
 
 package io.github.pitzzahh.jokes.service;
 
+import io.github.pitzzahh.jokes.exception.CategoryNotFoundException;
 import io.github.pitzzahh.util.utilities.classes.enums.Status;
 import io.github.pitzzahh.jokes.repository.JokesRepository;
+import io.github.pitzzahh.jokes.entity.Category;
 import org.springframework.stereotype.Service;
 import org.json.simple.parser.ParseException;
 import io.github.pitzzahh.jokes.util.Utility;
 import io.github.pitzzahh.jokes.entity.Joke;
+import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.util.List;
 
@@ -42,6 +45,7 @@ import java.util.List;
  * @see Status
  * @since 19
  */
+@Slf4j
 @Service
 public record JokesService(JokesRepository jokesRepository) {
 
@@ -50,8 +54,19 @@ public record JokesService(JokesRepository jokesRepository) {
      * @return a random joke
      */
     public Joke generateRandomJoke() {
-        List<Joke> jokes = jokesRepository.findAll();
-        return jokes.isEmpty() ? new Joke() : jokes.get((int) (Math.random() * jokes.size()));
+        return Utility.pickRandomJoke(jokesRepository, Category.ANY);
+    }
+
+    /**
+     * Gets a joke by category
+     * @param category the category
+     * @return a joke
+     */
+    public Joke getJokeByCategory(String category) {
+        return jokesRepository.findAll()
+                .stream().filter(joke -> joke.getCategory().equals(Category.valueOf(category)))
+                .findAny()
+                .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
     }
 
     /**
