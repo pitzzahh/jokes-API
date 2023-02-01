@@ -81,8 +81,12 @@ Please adhere to this project's `code of conduct`.
 
 ___
 ## Features
+- [ ] Random joke
 - [ ] Many joke categories
 - [ ] Many joke languages
+- [ ] Random joke based on category
+- [ ] Random joke based on language
+- [ ] Random joke based on category and language
 ___
 ## Support
 
