@@ -22,16 +22,19 @@
  * SOFTWARE.
  */
 
-package io.github.pitzzahh.jokes;
+package tech.araopj.jokes.entity;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class JokesApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(JokesApplication.class, args);
-    }
-
+public enum Language {
+    /**
+     * A language for English jokes
+     */
+    ENGLISH,
+    /**
+     * A language for Filipino jokes
+     */
+    FILIPINO,
+    /**
+     * A language for any language
+     */
+    ANY
 }

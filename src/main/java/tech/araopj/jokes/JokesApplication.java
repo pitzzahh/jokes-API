@@ -22,42 +22,16 @@
  * SOFTWARE.
  */
 
-package io.github.pitzzahh.jokes.entity;
+package tech.araopj.jokes;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import org.hibernate.Hibernate;
-import javax.persistence.Id;
-import java.util.Objects;
-import lombok.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Table
-@Getter
-@Setter
-@Builder
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity(name = "jokes")
-public class Joke {
+@SpringBootApplication
+public class JokesApplication {
 
-    @Id
-    @GeneratedValue
-    private Integer id;
-    private String joke;
-    private Category category;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Joke joke = (Joke) o;
-        return id != null && Objects.equals(id, joke.id);
+    public static void main(String[] args) {
+        SpringApplication.run(JokesApplication.class, args);
     }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
