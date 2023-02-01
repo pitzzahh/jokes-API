@@ -22,13 +22,16 @@
  * SOFTWARE.
  */
 
-package io.github.pitzzahh.jokes.repository;
+package tech.araopj.jokes;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import io.github.pitzzahh.jokes.entity.Joke;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Repository
-public interface JokesRepository extends JpaRepository<Joke, Integer> {
+@SpringBootApplication
+public class JokesApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(JokesApplication.class, args);
+    }
 
 }

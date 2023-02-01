@@ -22,15 +22,48 @@
  * SOFTWARE.
  */
 
-package io.github.pitzzahh.jokes.entity;
+package tech.araopj.jokes.entity;
 
-public enum Category {
-    /**
-     * A category for any jokes
-     */
-    ANY,
-    /**
-     * A category for dad jokes
-     */
-    DAD_JOKE
+import org.hibernate.Hibernate;
+import jakarta.persistence.*;
+import java.util.Objects;
+import lombok.*;
+
+@Table
+@Getter
+@Setter
+@Builder
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "jokes")
+public class Joke {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @Column(nullable = false)
+    private String joke;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Language lang;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Joke joke = (Joke) o;
+        return id != null && Objects.equals(id, joke.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

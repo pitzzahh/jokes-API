@@ -22,16 +22,25 @@
  * SOFTWARE.
  */
 
-package io.github.pitzzahh.jokes;
+package tech.araopj.jokes.repository;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import tech.araopj.jokes.entity.Language;
+import org.springframework.stereotype.Repository;
+import tech.araopj.jokes.entity.Category;
+import tech.araopj.jokes.entity.Joke;
+import java.util.List;
 
-@SpringBootApplication
-public class JokesApplication {
+@Repository
+public interface JokesRepository extends JpaRepository<Joke, Integer> {
 
-    public static void main(String[] args) {
-        SpringApplication.run(JokesApplication.class, args);
-    }
+    @Query("SELECT j FROM jokes j WHERE j.category = ?1")
+    List<Joke> findJokeByCategory(Category category);
 
+    @Query("SELECT j FROM jokes j WHERE j.lang = ?1")
+    List<Joke> findJokeByLanguage(Language language);
+
+    @Query("SELECT j FROM jokes j WHERE j.category = ?1 AND j.lang = ?2")
+    List<Joke> findJokeByCategoryAndLang(Category category, Language language);
 }

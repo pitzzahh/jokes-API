@@ -22,18 +22,20 @@
  * SOFTWARE.
  */
 
-package io.github.pitzzahh.jokes.service;
+package tech.araopj.jokes.service;
 
-import io.github.pitzzahh.jokes.exception.CategoryNotFoundException;
 import io.github.pitzzahh.util.utilities.classes.enums.Status;
-import io.github.pitzzahh.jokes.repository.JokesRepository;
-import io.github.pitzzahh.jokes.entity.Category;
+import tech.araopj.jokes.repository.JokesRepository;
+import tech.araopj.jokes.entity.Language;
+import tech.araopj.jokes.entity.Category;
 import org.springframework.stereotype.Service;
-import org.json.simple.parser.ParseException;
-import io.github.pitzzahh.jokes.util.Utility;
-import io.github.pitzzahh.jokes.entity.Joke;
-import lombok.extern.slf4j.Slf4j;
-import java.io.IOException;
+import tech.araopj.jokes.util.Utility;
+import tech.araopj.jokes.entity.Joke;
+import org.springframework.http.HttpStatus;
+
+import java.util.Collection;
+import java.util.Optional;
+import java.util.Random;
 import java.util.List;
 
 /**
@@ -45,28 +47,11 @@ import java.util.List;
  * @see Status
  * @since 19
  */
-@Slf4j
 @Service
 public record JokesService(JokesRepository jokesRepository) {
 
-    /**
-     * Generates a random joke from the list of jokes
-     * @return a random joke
-     */
-    public Joke generateRandomJoke() {
-        return Utility.pickRandomJoke(jokesRepository, Category.ANY);
-    }
-
-    /**
-     * Gets a joke by category
-     * @param category the category
-     * @return a joke
-     */
-    public Joke getJokeByCategory(String category) {
-        return jokesRepository.findAll()
-                .stream().filter(joke -> joke.getCategory().equals(Category.valueOf(category)))
-                .findAny()
-                .orElseThrow(() -> new CategoryNotFoundException("Category not found"));
+    public Collection<Joke> getAllJokes() {
+        return jokesRepository.findAll();
     }
 
     /**
@@ -79,25 +64,39 @@ public record JokesService(JokesRepository jokesRepository) {
      * @see Utility
      * @since 19
      */
-    public Status addJoke(Joke joke) {
-        if (Utility.doesJokeExist(jokesRepository, joke.getJoke())) return Status.ERROR;
+    public HttpStatus addJoke(Joke joke) {
+        if (Utility.doesJokeExist(jokesRepository, joke.getJoke())) return HttpStatus.CONFLICT;
         jokesRepository.save(joke);
-        return Status.SUCCESS;
+        return HttpStatus.OK;
     }
 
     /**
      * Saves all the jokes in the database from the local JSON file
      * @return the status of the operation
-     * @see Status
+     * @see HttpStatus
      * @see Joke
      * @see JokesRepository
      * @see Utility#getJokes()
      */
-    // TODO: remove after using
-    public Status saveAll() throws IOException, ParseException {
+    public HttpStatus saveAll() {
         Utility.getJokes()
                 .forEach(this::addJoke);
-        return Status.SUCCESS;
+        return HttpStatus.OK;
     }
 
+    public Optional<Joke> getRandomJokeByCategory(Category category) {
+        List<Joke> jokeByCategory = jokesRepository.findJokeByCategory(category);
+        return jokeByCategory.isEmpty() ? Optional.empty() : Optional.ofNullable(jokeByCategory.get(new Random().nextInt(jokeByCategory.size())));
+    }
+
+    public Optional<Joke> getRandomJokeByLanguage(Language lang) {
+        List<Joke> jokeByLanguage = jokesRepository.findJokeByLanguage(lang);
+        return jokeByLanguage.isEmpty() ? Optional.empty() : Optional.ofNullable(jokeByLanguage.get(new Random().nextInt(jokeByLanguage.size())));
+    }
+
+    public Optional<Joke> getRandomJokeByCategoryAndLanguage(Category category, Language language) {
+        List<Joke> jokeByCategoryAndLang = jokesRepository.findJokeByCategoryAndLang(category, language);
+        return jokeByCategoryAndLang.isEmpty() ? Optional.empty() :
+                Optional.ofNullable(jokeByCategoryAndLang.get(new Random().nextInt(jokeByCategoryAndLang.size())));
+    }
 }
