@@ -16,7 +16,7 @@ ___
 
 #### Get a random joke and returns a JSON response from the API
 
-```http
+```html
  GET https://api.araopj.tech/api/v1/jokes/random
 ```
 
@@ -38,7 +38,7 @@ ___
 ```
 #### Get random joke based on category and language
 
-```http
+```html
  GET https://api.araopj.tech/api/v1/jokes/random?category=${category}&lang=${language}
 ```
 
@@ -50,7 +50,7 @@ ___
 
 #### Get random joke based on category
 
-```http
+```html
  GET https://api.araopj.tech/api/v1/jokes/random?category=${category}
 ```
 
@@ -62,7 +62,7 @@ ___
 
 #### Get random joke based on language
 
-```http
+```html
  GET https://api.araopj.tech/api/v1/jokes/random?lang=${language}
 ```
 
