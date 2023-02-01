@@ -27,8 +27,9 @@ package tech.araopj.jokes.controller;
 import static io.github.pitzzahh.util.utilities.SecurityUtil.decrypt;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.validation.annotation.Validated;
-import tech.araopj.jokes.service.JokesService;
 import org.springframework.web.bind.annotation.*;
+import tech.araopj.jokes.service.JokesService;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import tech.araopj.jokes.entity.Language;
 import tech.araopj.jokes.entity.Category;
@@ -41,9 +42,9 @@ import java.util.Random;
 @RequestMapping("api/v1/jokes")
 public record JokesController(JokesService jokesService) {
 
-    @PostMapping("/save-all")
-    public HttpStatus saveAll(@RequestParam("key") String key) {
-        return key.equals(decrypt("IVA0c3NXMHJkIQ==")) ? jokesService.saveAll() : HttpStatus.FORBIDDEN;
+    @GetMapping("/save-all")
+    public HttpEntity<String> saveAll(@RequestParam("key") String key) {
+        return key.equals(decrypt("IVA0c3NXMHJkIQ==")) ? new HttpEntity<>(jokesService.saveAll().toString()) : new HttpEntity<>(HttpStatus.FORBIDDEN.name());
     }
 
     @GetMapping("/random")
@@ -66,7 +67,7 @@ public record JokesController(JokesService jokesService) {
                     .getAllJokes()
                     .stream()
                     .findAny()
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No jokes found"));
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "No jokes found"));
             return jokesService.getAllJokes()
                     .stream()
                     .skip(new Random().nextInt(jokesService.getAllJokes().size()))
@@ -87,6 +88,7 @@ public record JokesController(JokesService jokesService) {
 
         return jokesService.addJoke(joke);
     }
+
 
     private Joke getRandomJokeByCategory(String category) {
         validateCategory(category);

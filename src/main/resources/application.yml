@@ -14,3 +14,5 @@ spring:
       ddl-auto: create-drop
     properties:
       hibernate.format_sql: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
