@@ -42,10 +42,10 @@ ___
  GET https://api.araopj.tech/api/v1/jokes/random?category=${category}&lang=${language}
 ```
 
-| Parameter  | Type     | Description                             |
-|:-----------|:---------|:----------------------------------------|
-| `category` | `String` | **Required**. category of joke to fetch |
-| `lang`     | `String` | **Required**. language of joke to fetch |
+| Parameter  | Type     | Description                                 |
+|:-----------|:---------|:--------------------------------------------|
+| `category` | `String` | **Not Required**. category of joke to fetch |
+| `lang`     | `String` | **Not Required**. language of joke to fetch |
 
 
 #### Get random joke based on category
