@@ -3,10 +3,6 @@
 
 API that generates random jokes based on some categories or just random
 ___
-
-![Logo]()
-
-___
 ![GitHub Issues](https://img.shields.io/github/issues/pitzzahh/jokes-API)
 ![Forks](https://img.shields.io/github/forks/pitzzahh/jokes-API)
 ![Stars](https://img.shields.io/github/stars/pitzzahh/jokes-API)
@@ -48,6 +44,12 @@ ___
 | `lang`     | `String` | **Not Required**. language of joke to fetch |
 
 
+##### Sample Request
+
+```html
+ GET https://api.araopj.tech/api/v1/jokes/random?category=ANY&lang=FILIPINO
+```
+
 #### Get random joke based on category
 
 ```html
@@ -58,6 +60,19 @@ ___
 |:-----------|:---------|:----------------------------------------|
 | `category` | `String` | **Required**. category of joke to fetch |
 
+| Categories <br/>available |
+|:--------------------------|
+| `ANY`                     |
+| `DAD_JOKE`                |
+| `PUN`                     |
+| `KNOCK_KNOCK`             |
+| `ONE_LINER`               |
+
+#### Sample Request
+
+```html
+ GET https://api.araopj.tech/api/v1/jokes/random?category=DAD_JOKE
+```
 ___
 
 #### Get random joke based on language
@@ -70,7 +85,19 @@ ___
 |:----------|:---------|:----------------------------------------|
 | `lang`    | `String` | **Required**. language of joke to fetch |
 
+
+| Languages <br/>available |
+|:-------------------------|
+| `ENGLISH`                |
+| `FILIPINO`               |
+
+#### Sample Request
+
+```html
+ GET https://api.araopj.tech/api/v1/jokes/random?lang=FILIPINO
+```
 ___
+
 ## Contributing
 
 Contributions are always welcome!
@@ -81,12 +108,17 @@ Please adhere to this project's `code of conduct`.
 
 ___
 ## Features
-- [ ] Random joke
-- [ ] Many joke categories
-- [ ] Many joke languages
-- [ ] Random joke based on category
-- [ ] Random joke based on language
-- [ ] Random joke based on category and language
+- [x] Random joke
+- [x] Many joke categories
+- [x] Many joke languages
+- [x] Random joke based on category
+- [x] Random joke based on language
+- [x] Random joke based on category and language
+- [x] API Documentation
+- [ ] API Rate Limiting
+- [ ] API Authentication
+- [ ] API Key
+- [ ] Microservice (? maybe)
 ___
 ## Support
 
@@ -94,4 +126,6 @@ For support, email pitzzahh@araopj.tech
 ___
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+### 🤍 Special Thanks to [render.com](https://render.com/) for providing free hosting for this project
 
