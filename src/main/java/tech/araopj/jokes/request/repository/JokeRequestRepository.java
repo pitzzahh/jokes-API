@@ -1,10 +1,10 @@
-package tech.araopj.jokes.requests.repository;
+package tech.araopj.jokes.request.repository;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import tech.araopj.jokes.requests.entity.JokeRequest;
+import tech.araopj.jokes.request.entity.JokeRequest;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
 

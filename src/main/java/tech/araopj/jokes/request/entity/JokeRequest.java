@@ -1,4 +1,4 @@
-package tech.araopj.jokes.requests.entity;
+package tech.araopj.jokes.request.entity;
 
 import tech.araopj.jokes.entity.Category;
 import jakarta.persistence.GeneratedValue;

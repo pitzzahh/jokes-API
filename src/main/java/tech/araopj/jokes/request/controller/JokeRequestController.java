@@ -1,10 +1,10 @@
-package tech.araopj.jokes.requests.controller;
+package tech.araopj.jokes.request.controller;
 
 import org.springframework.web.server.ResponseStatusException;
-import tech.araopj.jokes.requests.service.JokeRequestService;
+import tech.araopj.jokes.request.service.JokeRequestService;
 import org.springframework.validation.annotation.Validated;
-import tech.araopj.jokes.requests.entity.JokeRequestBody;
-import tech.araopj.jokes.requests.entity.JokeRequest;
+import tech.araopj.jokes.request.entity.JokeRequestBody;
+import tech.araopj.jokes.request.entity.JokeRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
