@@ -39,7 +39,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 @RestController
-@RequestMapping("api/v1/jokes")
+@RequestMapping("v1")
 public record JokesController(JokesService jokesService) {
 
     @GetMapping("/save-all")
@@ -75,20 +75,6 @@ public record JokesController(JokesService jokesService) {
                     .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No jokes found"));
         }
     }
-
-    @PostMapping("/add")
-    public HttpStatus addJoke(@Validated @RequestBody Joke joke) throws ResponseStatusException {
-        jokesService.getAllJokes()
-                .stream()
-                .filter(j -> j.getJoke().contains(joke.getJoke()) && j.getCategory().equals(joke.getCategory()))
-                .findAny()
-                .ifPresent(j -> {
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, format("Joke %s already exists", j.getJoke()));
-                });
-
-        return jokesService.addJoke(joke);
-    }
-
 
     private Joke getRandomJokeByCategory(String category) {
         validateCategory(category);

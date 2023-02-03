@@ -29,7 +29,6 @@ import jakarta.persistence.*;
 import java.util.Objects;
 import lombok.*;
 
-@Table
 @Getter
 @Setter
 @Builder
