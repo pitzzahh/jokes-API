@@ -22,13 +22,27 @@ public record JokeRequestController(
 
     @PostMapping("/add")
     public HttpEntity<String> addJoke(@Validated @RequestBody JokeRequest jokeRequest) throws ResponseStatusException {
+        jokeRequestService
+                .getAllJokeRequests()
+                .stream()
+                .filter(j -> j.getJoke().getJoke().contains(jokeRequest.getJoke().getJoke()) && j.getJoke().getCategory().equals(jokeRequest.getJoke().getCategory()))
+                .findAny()
+                .ifPresent(j -> {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, format("Joke %s already exists", j.getJoke()));
+                });
+
         jokesService.getAllJokes()
                 .stream()
-                .filter(j -> j.getJoke().contains(jokeRequest.getJoke()) && j.getCategory().equals(jokeRequest.getCategory()))
+                .filter(j -> j.getJoke().contains(jokeRequest.getJoke().getJoke()) && j.getCategory().equals(jokeRequest.getJoke().getCategory()))
                 .findAny()
                 .ifPresent(j -> {
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, format("Joke %s already exists", j.getJoke()));
                 });
         return jokeRequestService.submitJoke(jokeRequest);
+    }
+
+    @PostMapping("/delete")
+    public HttpEntity<String> deleteJoke(@Validated @RequestBody JokeRequest jokeRequest) throws ResponseStatusException {
+        return jokeRequestService.deleteJoke(jokeRequest);
     }
 }

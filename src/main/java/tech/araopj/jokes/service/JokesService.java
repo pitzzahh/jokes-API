@@ -26,13 +26,12 @@ package tech.araopj.jokes.service;
 
 import io.github.pitzzahh.util.utilities.classes.enums.Status;
 import tech.araopj.jokes.repository.JokesRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.http.HttpStatus;
 import tech.araopj.jokes.entity.Language;
 import tech.araopj.jokes.entity.Category;
-import org.springframework.stereotype.Service;
 import tech.araopj.jokes.util.Utility;
 import tech.araopj.jokes.entity.Joke;
-import org.springframework.http.HttpStatus;
-
 import java.util.Collection;
 import java.util.Optional;
 import java.util.Random;
@@ -56,18 +55,17 @@ public record JokesService(JokesRepository jokesRepository) {
 
     /**
      * Adds a joke to the database, if it doesn't exist
+     *
      * @param joke the joke to add
-     * @return the status of the operation
      * @see Status
      * @see Joke
      * @see JokesRepository
      * @see Utility
      * @since 19
      */
-    public HttpStatus addJoke(Joke joke) {
-        if (Utility.doesJokeExist(jokesRepository, joke.getJoke())) return HttpStatus.CONFLICT;
+    public void addJoke(Joke joke) {
+        if (Utility.doesJokeExist(jokesRepository, joke.getJoke())) return;
         jokesRepository.save(joke);
-        return HttpStatus.OK;
     }
 
     /**

@@ -1,10 +1,12 @@
 package tech.araopj.jokes.requests.entity;
 
-import lombok.*;
-import tech.araopj.jokes.entity.Category;
-import tech.araopj.jokes.entity.Language;
-import org.hibernate.Hibernate;
 import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.Hibernate;
+import tech.araopj.jokes.entity.Category;
+import tech.araopj.jokes.entity.Joke;
+import tech.araopj.jokes.entity.Language;
+
 import java.util.Objects;
 
 @Table
@@ -13,7 +15,7 @@ import java.util.Objects;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "jokes_requests")
+@Entity(name = "joke_request")
 public final class JokeRequest {
 
     @Id
@@ -26,10 +28,17 @@ public final class JokeRequest {
             strategy = GenerationType.SEQUENCE,
             generator = "joke_request_sequence"
     )
-    private Long id;
-    private String joke;
+    private Integer id;
+    private String jokeContent;
     private Category category;
-    private Language language;
+    private Language lang;
+
+    @ManyToOne
+    @JoinColumn(
+            nullable = false,
+            name = "joke_id"
+    )
+    private Joke joke;
 
     @Override
     public boolean equals(Object o) {

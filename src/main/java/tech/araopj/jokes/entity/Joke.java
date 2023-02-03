@@ -35,7 +35,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "jokes")
+@Entity(name = "joke")
 public class Joke {
 
     @Id
