@@ -13,7 +13,7 @@ ___
 #### Get a random joke and returns a JSON response from the API
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random
+ GET https://jokes.araopj.tech/v1/random
 ```
 
 #### Example response
@@ -35,7 +35,7 @@ ___
 #### Get random joke based on category and language
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random?category=${category}&lang=${language}
+ GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language}
 ```
 
 | Parameter  | Type     | Description                                 |
@@ -47,13 +47,13 @@ ___
 ##### Sample Request
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random?category=ANY&lang=FILIPINO
+ GET https://jokes.araopj.tech/v1/random?category=ANY&lang=FILIPINO
 ```
 
 #### Get random joke based on category
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random?category=${category}
+ GET https://jokes.araopj.tech/v1/random?category=${category}
 ```
 
 | Parameter  | Type     | Description                             |
@@ -71,14 +71,14 @@ ___
 #### Sample Request
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random?category=DAD_JOKE
+ GET https://jokes.araopj.tech/v1/random?category=DAD_JOKE
 ```
 ___
 
 #### Get random joke based on language
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random?lang=${language}
+ GET https://jokes.araopj.tech/v1/random?lang=${language}
 ```
 
 | Parameter | Type     | Description                             |
@@ -94,7 +94,7 @@ ___
 #### Sample Request
 
 ```html
- GET https://api.araopj.tech/api/v1/jokes/random?lang=FILIPINO
+ GET https://jokes.araopj.tech/v1/random?lang=FILIPINO
 ```
 ___
 
