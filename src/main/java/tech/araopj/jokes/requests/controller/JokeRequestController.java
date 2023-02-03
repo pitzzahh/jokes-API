@@ -25,7 +25,7 @@ public record JokeRequestController(
         jokeRequestService
                 .getAllJokeRequests()
                 .stream()
-                .filter(j -> j.getJoke().getJoke().contains(jokeRequest.getJoke().getJoke()) && j.getJoke().getCategory().equals(jokeRequest.getJoke().getCategory()))
+                .filter(j -> j.getJoke().contains(jokeRequest.getJoke()) && j.getCategory().equals(jokeRequest.getCategory()))
                 .findAny()
                 .ifPresent(j -> {
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, format("Joke %s already exists", j.getJoke()));
@@ -33,7 +33,7 @@ public record JokeRequestController(
 
         jokesService.getAllJokes()
                 .stream()
-                .filter(j -> j.getJoke().contains(jokeRequest.getJoke().getJoke()) && j.getCategory().equals(jokeRequest.getJoke().getCategory()))
+                .filter(j -> j.getJoke().contains(jokeRequest.getJoke()) && j.getCategory().equals(jokeRequest.getCategory()))
                 .findAny()
                 .ifPresent(j -> {
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST, format("Joke %s already exists", j.getJoke()));
