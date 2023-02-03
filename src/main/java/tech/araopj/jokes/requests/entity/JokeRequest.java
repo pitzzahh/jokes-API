@@ -1,13 +1,11 @@
 package tech.araopj.jokes.requests.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.Hibernate;
 import tech.araopj.jokes.entity.Category;
-import tech.araopj.jokes.entity.Joke;
 import tech.araopj.jokes.entity.Language;
-
+import org.hibernate.Hibernate;
+import jakarta.persistence.*;
 import java.util.Objects;
+import lombok.*;
 
 @Table
 @Getter
@@ -29,16 +27,9 @@ public final class JokeRequest {
             generator = "joke_request_sequence"
     )
     private Integer id;
-    private String jokeContent;
+    private String joke;
     private Category category;
     private Language lang;
-
-    @ManyToOne
-    @JoinColumn(
-            nullable = false,
-            name = "joke_id"
-    )
-    private Joke joke;
 
     @Override
     public boolean equals(Object o) {
