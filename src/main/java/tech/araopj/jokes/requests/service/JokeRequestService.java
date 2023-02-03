@@ -19,7 +19,8 @@ public record JokeRequestService(JokeRequestRepository repository) {
     }
 
     public HttpEntity<String> deleteJoke(JokeRequest jokeRequest) {
-        repository.deleteJokeRequestById(jokeRequest.getId());
-        return new HttpEntity<>("Joke deleted successfully");
+        return new HttpEntity<>(
+                repository.deleteJokeRequestById(jokeRequest.getId()) == 1 ? "Joke deleted successfully" : "Joke not found"
+        );
     }
 }
