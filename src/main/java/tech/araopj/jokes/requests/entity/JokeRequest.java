@@ -1,31 +1,28 @@
 package tech.araopj.jokes.requests.entity;
 
 import tech.araopj.jokes.entity.Category;
+import jakarta.persistence.GeneratedValue;
 import tech.araopj.jokes.entity.Language;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
-import jakarta.persistence.*;
+import jakarta.persistence.Id;
 import java.util.Objects;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-@Table
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "joke_request")
-public final class JokeRequest {
+@Entity(name = "joke_requests")
+public class JokeRequest  {
 
     @Id
-    @SequenceGenerator(
-            name = "joke_request_sequence",
-            sequenceName = "joke_request_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "joke_request_sequence"
-    )
+    @GeneratedValue
     private Integer id;
     private String joke;
     private Category category;
