@@ -109,19 +109,19 @@ public interface Utility {
                 Joke.builder().joke("Ano ang tawag sa taong mahilig sa kanta? Music-lover!")
                         .category(Category.ONE_LINER)
                         .language(Language.FILIPINO).build(),
-                Joke.builder().joke("Ano ang tawag sa isang mahilig sa basketball na namamalimos? Slamdunk-request!")
+                Joke.builder().joke("Ano ang tawag sa isang mahilig sa basketball na namamalimos? Slamdunk-submit!")
                         .category(Category.ONE_LINER)
                         .language(Language.FILIPINO).build(),
-                Joke.builder().joke("nock, knock. Who’s there? Cow says. Cow says who? No silly, cow says moooooo!")
+                Joke.builder().joke("Knock, knock. Who’s there? Cow says. Cow says who? No silly, cow says moooooo!")
                         .category(Category.KNOCK_KNOCK)
                         .language(Language.ENGLISH).build(),
-                Joke.builder().joke("nock, knock. Who’s there? Boo. Boo who? Don’t cry, it’s only a joke!")
+                Joke.builder().joke("Knock, knock. Who’s there? Boo. Boo who? Don’t cry, it’s only a joke!")
                         .category(Category.KNOCK_KNOCK)
                         .language(Language.ENGLISH).build(),
-                Joke.builder().joke("nock, knock. Who’s there? Cows go. Cows go who? No silly, cows go moooooo!")
+                Joke.builder().joke("Knock, knock. Who’s there? Cows go. Cows go who? No silly, cows go moooooo!")
                         .category(Category.KNOCK_KNOCK)
                         .language(Language.ENGLISH).build(),
-                Joke.builder().joke("nock, knock. Who’s there? A little old lady. A little old lady who? I did not know you could yodel!")
+                Joke.builder().joke("Knock, knock. Who’s there? A little old lady. A little old lady who? I did not know you could yodel!")
                         .category(Category.KNOCK_KNOCK)
                         .language(Language.ENGLISH).build(),
                 Joke.builder().joke("""
