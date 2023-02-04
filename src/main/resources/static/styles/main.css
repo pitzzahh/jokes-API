@@ -118,28 +118,24 @@ main .example-response h3 {
   color: #5f9988;
   font-size: clamp(0.8em, 2vw, 1em);
 }
-main .endpoint pre,
-main .example-response pre {
-  margin: 1px solid red;
-}
-main .endpoint pre code,
-main .example-response pre code {
+main .endpoint pre > code,
+main .example-response pre > code {
   color: #141412;
   font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
 }
-main .endpoint pre code a,
-main .example-response pre code a {
+main .endpoint pre > code a,
+main .example-response pre > code a {
   color: #141412;
   font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
   text-decoration: none;
 }
-main .endpoint pre code a .underline,
-main .example-response pre code a .underline {
+main .endpoint pre > code a .underline,
+main .example-response pre > code a .underline {
   position: relative;
   text-decoration: none;
 }
-main .endpoint pre code a .underline::before,
-main .example-response pre code a .underline::before {
+main .endpoint pre > code a .underline::before,
+main .example-response pre > code a .underline::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -149,13 +145,13 @@ main .example-response pre code a .underline::before {
   background-color: #5f9988;
   height: 0.2em;
 }
-main .endpoint pre code a .underline:hover::before, main .endpoint pre code a .underline:active::after,
-main .example-response pre code a .underline:hover::before,
-main .example-response pre code a .underline:active::after {
+main .endpoint pre > code a .underline:hover::before, main .endpoint pre > code a .underline:active::after,
+main .example-response pre > code a .underline:hover::before,
+main .example-response pre > code a .underline:active::after {
   width: 100%;
 }
-main .endpoint pre code a .underline:active,
-main .example-response pre code a .underline:active {
+main .endpoint pre > code a .underline:active,
+main .example-response pre > code a .underline:active {
   color: #0b7cbd;
 }
 main .endpoint div,
@@ -170,7 +166,6 @@ main .example-response pre {
   white-space: pre-wrap;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 main .endpoint div a,
 main .example-response div a {

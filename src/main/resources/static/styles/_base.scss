@@ -137,9 +137,7 @@ main {
       font-size: clamp(0.8em, 2vw, 1em);
     }
 
-    pre {
-      margin: 1px solid red;
-      code {
+    pre > code {
         color: #141412;
         font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
         a {
@@ -171,7 +169,6 @@ main {
             }
           }
         }
-      }
     }
 
     div,
@@ -184,7 +181,6 @@ main {
       white-space: pre-wrap;
       display: flex;
       justify-content: flex-start;
-      align-items: center;
     }
     div {
       a {
