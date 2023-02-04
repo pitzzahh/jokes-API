@@ -47,83 +47,83 @@ public interface Utility {
         Collections.addAll(jokes,
                 Joke.builder().joke("Why do fathers take an extra pair of socks when they go golfing? In case they get a hole in one!")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("I\\'m afraid for the calendar. Its days are numbered.")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a belt made out of watches? A \"waist of time\".")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a pile of cats? A \"meowntain\".")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder()
                         .joke("What do a tick and the Eiffel Tower have in common? They\\'re both Paris sites.")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a fish wearing a bowtie? \"Sofishticated.\"")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("How do you follow Will Smith in the snow? You follow the fresh prints.")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("If April showers bring May flowers, what do May flowers bring?\"Pilgrims\".")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a fake noodle? An \"impasta\".")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a cow with no legs? Ground beef.")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a cow with two legs? Lean beef.")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a belt made out of watches? A \"waist of time\".")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("I thought the dryer was shrinking my clothes. Turns out it was the refrigerator all along.")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("What do you call a factory that makes okay products? A \"SatisFACTORY\"")
                         .category(Category.DAD_JOKE)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("Ano ang tawag sa babaeng mahilig sa pagkain? Foodie!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("Ano ang tawag sa babaeng mahilig sa paglalaro? Gamer!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("Ano ang tawag sa babaeng mahilig sa paglalakbay? Traveler!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("Ano ang tawag sa babaeng mahilig sa paglalaro ng badminton? Shuttlecock!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("Ano ang tawag sa babaeng mahilig sa paglalaro ng basketball? Slam-dunk!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("Ano ang tawag sa babaeng mahilig sa paglalaro ng volleyball? Spiker!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("Ano ang tawag sa taong mahilig sa kanta? Music-lover!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
-                Joke.builder().joke("Ano ang tawag sa isang mahilig sa basketball na namamalimos? Slamdunk-request!")
+                        .language(Language.FILIPINO).build(),
+                Joke.builder().joke("Ano ang tawag sa isang mahilig sa basketball na namamalimos? Slamdunk-submit!")
                         .category(Category.ONE_LINER)
-                        .lang(Language.FILIPINO).build(),
-                Joke.builder().joke("nock, knock. Who’s there? Cow says. Cow says who? No silly, cow says moooooo!")
+                        .language(Language.FILIPINO).build(),
+                Joke.builder().joke("Knock, knock. Who’s there? Cow says. Cow says who? No silly, cow says moooooo!")
                         .category(Category.KNOCK_KNOCK)
-                        .lang(Language.ENGLISH).build(),
-                Joke.builder().joke("nock, knock. Who’s there? Boo. Boo who? Don’t cry, it’s only a joke!")
+                        .language(Language.ENGLISH).build(),
+                Joke.builder().joke("Knock, knock. Who’s there? Boo. Boo who? Don’t cry, it’s only a joke!")
                         .category(Category.KNOCK_KNOCK)
-                        .lang(Language.ENGLISH).build(),
-                Joke.builder().joke("nock, knock. Who’s there? Cows go. Cows go who? No silly, cows go moooooo!")
+                        .language(Language.ENGLISH).build(),
+                Joke.builder().joke("Knock, knock. Who’s there? Cows go. Cows go who? No silly, cows go moooooo!")
                         .category(Category.KNOCK_KNOCK)
-                        .lang(Language.ENGLISH).build(),
-                Joke.builder().joke("nock, knock. Who’s there? A little old lady. A little old lady who? I did not know you could yodel!")
+                        .language(Language.ENGLISH).build(),
+                Joke.builder().joke("Knock, knock. Who’s there? A little old lady. A little old lady who? I did not know you could yodel!")
                         .category(Category.KNOCK_KNOCK)
-                        .lang(Language.ENGLISH).build(),
+                        .language(Language.ENGLISH).build(),
                 Joke.builder().joke("""
                                 Knock! Knock!
                                 Who’s there?
@@ -134,7 +134,7 @@ public interface Utility {
                                 Tiger Leon Pating Kambing
                                 Di mo pa rin pansin""")
                         .category(Category.KNOCK_KNOCK)
-                        .lang(Language.FILIPINO).build(),
+                        .language(Language.FILIPINO).build(),
                 Joke.builder().joke("""
                                 Knock! Knock!
                                 Who’s there?
@@ -142,7 +142,7 @@ public interface Utility {
                                 New Zealand who?
                                 New Zealand ka sa mundong ito, laking tuwa ng magulang mo…""")
                         .category(Category.KNOCK_KNOCK)
-                        .lang(Language.FILIPINO).build()
+                        .language(Language.FILIPINO).build()
         );
         return jokes.stream().distinct().toList();
     }
@@ -150,7 +150,7 @@ public interface Utility {
     /**
      * Checks if a joke exists in the database
      *
-     * @param jokesRepository the jokes repository
+     * @param jokesRepository the jokes jokeRequestRepository
      * @param joke            the joke to check
      * @return true if the joke exists, false otherwise
      * @see JokesRepository

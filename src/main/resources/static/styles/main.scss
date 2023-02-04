@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+// Settings
+// ==================================================
+// Animation
+// ===================================
+$positive-amount: 2% !default;
+$negative-amount: -2% !default;
+
+$transition-amount: 1s !default;
+
+$translate-y-positive: $positive-amount !default;
+$translate-y-negative: $negative-amount !default;
+$translate-x-positive: $positive-amount !default;
+$translate-x-negative: $negative-amount !default;
+
+$x-position: -2% !default;
+$y-position: -2% !default;
+// ===================================
+// End of Animation
+// ==================================================
+// End of Settings
+
+@import "base";
+@import "animations";

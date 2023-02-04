@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jokes API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <p id="api-name">Jokes API</p>
+    </header>
+    <main>
+      <section id="hero">
+        <div>
+          <hr class="thin" />
+          <p class="description animate-from-bottom">
+            This is a simple API that returns a random joke from a list of jokes
+            based on some categories or language or just random.
+          </p>
+
+          <hr class="thick" />
+
+          <div id="project-info">
+            <img
+              class="aniamte-from-bottom"
+              src="https://img.shields.io/github/issues/pitzzahh/jokes-API"
+              alt="Issues"
+            />
+            <img
+              class="aniamte-from-bottom"
+              src="https://img.shields.io/github/license/pitzzahh/jokes-API"
+              alt="License"
+            />
+            <img
+              class="aniamte-from-bottom"
+              src="https://img.shields.io/github/forks/pitzzahh/jokes-API"
+              alt="Forks"
+            />
+            <img
+              class="aniamte-from-bottom"
+              src="https://img.shields.io/github/stars/pitzzahh/jokes-API"
+              alt="Stars"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="sample">
+        <div class="api-reference">
+          <h2 class="animate-from-right">API Reference</h2>
+          <div class="endpoint">
+            <h3 class="mapping-details animate-from-bottom">
+              Get a random joke and returns a JSON response from the API
+            </h3>
+            <pre>
+              <code class="aniamte-from-right"><a href="https://jokes.araopj.tech/v1/random" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random</span></a></code>
+            </pre>
+          </div>
+          <div class="example-response">
+            <h3 class="animate-from-right">Example response</h3>
+            <pre><code class="animate-from-right">
+{
+  "joke": "What do you call a fake noodle? An \"impasta\".",
+  "category": "DAD_JOKE",
+  "language": "ENGLISH"
+}
+              </code></pre>
+            <pre><code class="animate-from-right">
+{
+  "joke": "Ano ang sabi ng isang kahoy sa ibang kahoy? Pakapit!",
+  "category": "ONE_LINER",
+  "language": "FILIPINO"
+}
+            </code></pre>
+          </div>
+        </div>
+      </section>
+      <hr class="medium" />
+      <section id="category-and-language">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details animate-from-bottom">
+              Get random joke based on category and language
+            </h3>
+            <pre>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language</code>
+            </pre>
+          </div>
+
+          <table class="animate-from-bottom">
+            <thead>
+              <tr>
+                <th class="column-name">Parameter</th>
+                <th class="column-name">Type</th>
+                <th class="column-name">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>category</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. category of joke to fetch
+                </td>
+              </tr>
+              <tr>
+                <td>language</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. language of joke to fetch
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="endpoint">
+            <h5 class="animate-from-right">Sample Request</h5>
+            <pre>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random?category=ANY&language=FILIPINO" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random?category=ANY&language=FILIPINO</span></a></code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <hr class="medium" />
+
+      <section id="category">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details animate-from-bottom">
+              Get random joke based on category
+            </h3>
+            <pre>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?category=${category}</code>
+            </pre>
+          </div>
+
+          <table class="animate-from-bottom">
+            <thead>
+              <tr>
+                <th class="column-name">Parameter</th>
+                <th class="column-name">Type</th>
+                <th class="column-name">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>category</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. category of joke to fetch
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="animate-from-bottom">
+            <thead>
+              <tr>
+                <th class="column-name">Categories <br />available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ANY</td>
+              </tr>
+              <tr>
+                <td>DAD_JOKE</td>
+              </tr>
+
+              <tr>
+                <td>PUN</td>
+              </tr>
+              <tr>
+                <td>KNOCK_KNOCK</td>
+              </tr>
+              <tr>
+                <td>ONE_LINER</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="endpoint">
+            <h5 class="animate-from-right">Sample Request</h5>
+            <pre>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random?category=DAD_JOKE" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random?category=DAD_JOKE</span></a></code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <hr class="medium" />
+
+      <section id="language">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details animate-from-bottom">
+              Get random joke based on language
+            </h3>
+            <pre>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?lang=${language}</code>
+            </pre>
+          </div>
+
+          <table class="animate-from-bottom">
+            <thead>
+              <tr>
+                <th class="column-name">Parameter</th>
+                <th class="column-name">Type</th>
+                <th class="column-name">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>lang</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. language of joke to fetch
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="animate-from-bottom">
+            <thead>
+              <tr>
+                <th class="column-name">Languages <br />available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ENGLISH</td>
+              </tr>
+              <tr>
+                <td>FILIPINO</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="endpoint">
+            <h5 class="animate-from-right">Sample Request</h5>
+            <pre>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random?language=FILIPINO" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random?language=FILIPINO</span></a></code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <hr class="medium" />
+
+      <section id="joke-submission">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details animate-from-bottom">Submit a joke</h3>
+            <pre>
+              <code class="animate-from-right">POST https://jokes.araopj.tech/v1/submit</code>
+            </pre>
+          </div>
+          <div class="example-response">
+            <h3 class="animate-from-right">Example request body to submit</h3>
+            <pre><code class="animate-from-right">
+  {
+  "joke": "What do you call a cow with no legs? Ground beef.",
+  "category": "DAD_JOKE",
+  "language": "ENGLISH"
+  }
+            </code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p>Made with <span>&#10084;</span> by pitzzahh</p>
+      </div>
+      <div><p>Under Construction &#9881;</p></div>
+    </footer>
+
+    <svg
+      id="scroll-up"
+      width="24"
+      height="14"
+      viewBox="0 0 24 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.81138 13.3096C3.035 14.065 1.79834 14.065 1.02196 13.3096L0.973271 13.2622C0.166218 12.477 0.166217 11.1806 0.97327 10.3953L10.6053 1.02364C11.3817 0.268243 12.6183 0.268244 13.3947 1.02364L23.0267 10.3953C23.8338 11.1806 23.8338 12.477 23.0267 13.2622L22.978 13.3096C22.2017 14.065 20.965 14.065 20.1886 13.3096L13.3947 6.69932C12.6183 5.94392 11.3817 5.94392 10.6053 6.69932L3.81138 13.3096Z"
+        fill="#5F9988"
+      ></path>
+    </svg>
+
+    <script defer src="scripts/animations.js"></script>
+  </body>
+</html>

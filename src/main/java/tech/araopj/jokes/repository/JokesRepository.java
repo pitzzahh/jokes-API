@@ -38,9 +38,9 @@ public interface JokesRepository extends JpaRepository<Joke, Integer> {
     @Query("SELECT j FROM jokes j WHERE j.category = ?1")
     List<Joke> findJokeByCategory(Category category);
 
-    @Query("SELECT j FROM jokes j WHERE j.lang = ?1")
+    @Query("SELECT j FROM jokes j WHERE j.language = ?1")
     List<Joke> findJokeByLanguage(Language language);
 
-    @Query("SELECT j FROM jokes j WHERE j.category = ?1 AND j.lang = ?2")
+    @Query("SELECT j FROM jokes j WHERE j.category = ?1 AND j.language = ?2")
     List<Joke> findJokeByCategoryAndLang(Category category, Language language);
 }

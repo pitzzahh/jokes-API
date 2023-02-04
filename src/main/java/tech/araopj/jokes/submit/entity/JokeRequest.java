@@ -1,4 +1,4 @@
-package tech.araopj.jokes.request.entity;
+package tech.araopj.jokes.submit.entity;
 
 import tech.araopj.jokes.entity.Category;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +26,8 @@ public class JokeRequest  {
     private Integer id;
     private String joke;
     private Category category;
-    private Language lang;
+    private Language language;
+    private Boolean approved;
 
     @Override
     public boolean equals(Object o) {

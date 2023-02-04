@@ -39,7 +39,7 @@ import java.util.List;
 
 /**
  * The jokes service
- * @param jokesRepository the jokes repository
+ * @param jokesRepository the jokes jokeRequestRepository
  * @see JokesRepository
  * @see Joke
  * @see Utility
