@@ -26,7 +26,6 @@ package tech.araopj.jokes.controller;
 
 import static io.github.pitzzahh.util.utilities.SecurityUtil.decrypt;
 import org.springframework.web.server.ResponseStatusException;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import tech.araopj.jokes.service.JokesService;
 import org.springframework.http.HttpEntity;
@@ -49,7 +48,7 @@ public record JokesController(JokesService jokesService) {
 
     @GetMapping("/random")
     public Joke getRandomJoke(@RequestParam(required = false, name = "category") String category,
-                              @RequestParam(required = false, name = "lang") String language) throws ResponseStatusException {
+                              @RequestParam(required = false, name = "language") String language) throws ResponseStatusException {
         if (category != null && language != null) {
             validateCategory(category);
             validateLanguage(language);
@@ -74,6 +73,11 @@ public record JokesController(JokesService jokesService) {
                     .findFirst()
                     .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No jokes found"));
         }
+    }
+
+    @RequestMapping("/")
+    public String index() {
+        return "index.html";
     }
 
     private Joke getRandomJokeByCategory(String category) {
