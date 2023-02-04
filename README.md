@@ -102,6 +102,23 @@ ___
 
 Contributions are always welcome!
 
+#### Have a joke in mind? Submit now!
+
+```html
+ POST https://api.araopj.tech/api/v1/jokes/submit
+```
+
+##### Sample submission
+
+```json
+{
+  "joke": "What do you call a cow with no legs? Ground beef.",
+  "category": "DAD_JOKE",
+  "lang": "ENGLISH"
+}
+```
+___
+
 See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
