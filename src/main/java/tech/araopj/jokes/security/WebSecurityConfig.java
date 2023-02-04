@@ -61,7 +61,7 @@ public class WebSecurityConfig {
         );
         configuration.setAllowedMethods(Arrays.asList("GET","POST"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST"));
         var source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
