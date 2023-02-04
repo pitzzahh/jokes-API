@@ -35,7 +35,7 @@ ___
 #### Get random joke based on category and language
 
 ```html
- GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language}
+ GET https://jokes.araopj.tech/v1/random?category=${category}&language=${language}
 ```
 
 | Parameter  | Type     | Description                                 |
@@ -78,12 +78,12 @@ ___
 #### Get random joke based on language
 
 ```html
- GET https://jokes.araopj.tech/v1/random?lang=${language}
+ GET https://jokes.araopj.tech/v1/random?language=${language}
 ```
 
-| Parameter | Type     | Description                             |
-|:----------|:---------|:----------------------------------------|
-| `lang`    | `String` | **Required**. language of joke to fetch |
+| Parameter  | Type     | Description                             |
+|:-----------|:---------|:----------------------------------------|
+| `language` | `String` | **Required**. language of joke to fetch |
 
 
 | Languages <br/>available |
