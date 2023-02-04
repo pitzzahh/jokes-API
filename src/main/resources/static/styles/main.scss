@@ -3,25 +3,10 @@
 
 // Settings
 // ==================================================
-// base
-$light-mode-color: black !default;
-$dark-mode-color: #f1f0ee !default;
-$dark-mode-cs-color: #a1c181 !default;
-$light-mode-cs-color: #6db33f !default;
-$project-width-mobile: 8.75em !default;
-$project-height-mobile: 4.6875em !default;
-$project-gradient: linear-gradient(
-  to right,
-  rgba(254, 127, 45, 1) 5%,
-  rgba(95, 153, 136, 1) 100%
-) !default;
-$bg-image: url("../assets/bg.svg") !default;
-$display: flex !default;
-
 // Animation
 // ===================================
-$positive-amount: 10% !default;
-$negative-amount: -10% !default;
+$positive-amount: 2% !default;
+$negative-amount: -2% !default;
 
 $transition-amount: 1s !default;
 
@@ -30,8 +15,8 @@ $translate-y-negative: $negative-amount !default;
 $translate-x-positive: $positive-amount !default;
 $translate-x-negative: $negative-amount !default;
 
-$x-position: -5% !default;
-$y-position: -5% !default;
+$x-position: -2% !default;
+$y-position: -2% !default;
 // ===================================
 // End of Animation
 // ==================================================

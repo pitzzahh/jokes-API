@@ -11,8 +11,8 @@ html {
 :root {
   --padding: 1em;
   --light-dark-color: #6f7277;
-  --code-font-size: 0.5em;
-  --min-font-size: 0.5em;
+  --code-font-size: 0.8em;
+  --min-font-size: 0.8em;
   --max-font-size: 1em;
 }
 
@@ -24,6 +24,14 @@ header {
     padding: 0.2em var(--padding);
     color: #5f9988;
   }
+}
+
+#scroll-up {
+  position: fixed;
+  bottom: 2em;
+  right: 1em;
+  cursor: pointer;
+  display: none;
 }
 
 main {
@@ -80,12 +88,12 @@ main {
       color: #5f9988;
 
       &:nth-child(odd) {
-        border: .5px dotted var(--light-dark-color);
+        border: 0.5px dotted var(--light-dark-color);
       }
 
       &:nth-child(even) {
-        border-top: .5px dotted var(--light-dark-color);
-        border-bottom: .5px dotted var(--light-dark-color);
+        border-top: 0.5px dotted var(--light-dark-color);
+        border-bottom: 0.5px dotted var(--light-dark-color);
       }
     }
 
@@ -97,12 +105,12 @@ main {
           color: #141412;
           text-align: center;
           &:nth-child(odd) {
-            border: .5px dotted var(--light-dark-color);
+            border: 0.5px dotted var(--light-dark-color);
           }
 
           &:nth-child(even) {
-            border-top: .5px dotted var(--light-dark-color);
-            border-bottom: .5px dotted var(--light-dark-color);
+            border-top: 0.5px dotted var(--light-dark-color);
+            border-bottom: 0.5px dotted var(--light-dark-color);
           }
           a {
             color: #fff;
@@ -129,45 +137,46 @@ main {
       font-size: clamp(0.8em, 2vw, 1em);
     }
 
-
-    pre > code {
-      color: #141412;
-      font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
-      a {
+    pre {
+      margin: 1px solid red;
+      code {
         color: #141412;
         font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
-        text-decoration: none;
-
-        .underline {
-          position: relative;
+        a {
+          color: #141412;
+          font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
           text-decoration: none;
-          &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            transition: width 0.2s ease-in-out;
-            background-color: #5F9988;
-            height: 0.2em;
-          }
 
-          &:hover::before,
-          &:active::after {
-            width: 100%;
-          }
+          .underline {
+            position: relative;
+            text-decoration: none;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              transition: width 0.2s ease-in-out;
+              background-color: #5f9988;
+              height: 0.2em;
+            }
 
-          &:active {
-            color: #0B7CBD;
-          }
+            &:hover::before,
+            &:active::after {
+              width: 100%;
+            }
 
+            &:active {
+              color: #0b7cbd;
+            }
+          }
         }
       }
     }
 
     div,
     pre {
-      background: #CFD0D1;
+      background: #cfd0d1;
       border-radius: 0.2em;
       margin: 0.5em 0;
       padding: var(--padding);
@@ -202,7 +211,6 @@ footer {
     }
   }
 }
-
 
 @media screen and (min-width: 768px) {
   section {

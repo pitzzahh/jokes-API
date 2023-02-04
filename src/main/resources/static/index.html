@@ -201,7 +201,9 @@
       <section id="language">
         <div class="api-reference">
           <div class="endpoint">
-            <h3 class="mapping-details aniamte-from-bottom">Get random joke based on language</h3>
+            <h3 class="mapping-details animate-from-bottom">
+              Get random joke based on language
+            </h3>
             <pre>
               <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?lang=${language}</code>
             </pre>
@@ -250,6 +252,29 @@
           </div>
         </div>
       </section>
+
+      <hr class="medium" />
+
+      <section id="joke-submission">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details animate-from-bottom">Submit a joke</h3>
+            <pre>
+              <code class="animate-from-right">POST https://jokes.araopj.tech/v1/submit</code>
+            </pre>
+          </div>
+          <div class="example-response">
+            <h3 class="animate-from-right">Example request body to submit</h3>
+            <pre><code class="animate-from-right">
+  {
+  "joke": "What do you call a cow with no legs? Ground beef.",
+  "category": "DAD_JOKE",
+  "language": "ENGLISH"
+  }
+            </code></pre>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -258,6 +283,20 @@
       </div>
       <div><p>Under Construction &#9881;</p></div>
     </footer>
+
+    <svg
+      id="scroll-up"
+      width="24"
+      height="14"
+      viewBox="0 0 24 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.81138 13.3096C3.035 14.065 1.79834 14.065 1.02196 13.3096L0.973271 13.2622C0.166218 12.477 0.166217 11.1806 0.97327 10.3953L10.6053 1.02364C11.3817 0.268243 12.6183 0.268244 13.3947 1.02364L23.0267 10.3953C23.8338 11.1806 23.8338 12.477 23.0267 13.2622L22.978 13.3096C22.2017 14.065 20.965 14.065 20.1886 13.3096L13.3947 6.69932C12.6183 5.94392 11.3817 5.94392 10.6053 6.69932L3.81138 13.3096Z"
+        fill="#5F9988"
+      ></path>
+    </svg>
 
     <script defer src="scripts/animations.js"></script>
   </body>
