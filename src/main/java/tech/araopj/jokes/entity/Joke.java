@@ -51,7 +51,7 @@ public class Joke {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Language lang;
+    private Language language;
 
     @Override
     public boolean equals(Object o) {
