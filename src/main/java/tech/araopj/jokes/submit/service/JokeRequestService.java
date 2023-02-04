@@ -1,9 +1,9 @@
-package tech.araopj.jokes.request.service;
+package tech.araopj.jokes.submit.service;
 
-import tech.araopj.jokes.request.repository.JokeRequestRepository;
-import tech.araopj.jokes.request.entity.JokeRequestBody;
+import tech.araopj.jokes.submit.repository.JokeRequestRepository;
+import tech.araopj.jokes.submit.entity.JokeRequestBody;
 import tech.araopj.jokes.repository.JokesRepository;
-import tech.araopj.jokes.request.entity.JokeRequest;
+import tech.araopj.jokes.submit.entity.JokeRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpEntity;
 import java.util.Collection;

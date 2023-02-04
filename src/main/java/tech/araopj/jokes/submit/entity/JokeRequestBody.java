@@ -1,4 +1,4 @@
-package tech.araopj.jokes.request.entity;
+package tech.araopj.jokes.submit.entity;
 
 import tech.araopj.jokes.entity.Category;
 import tech.araopj.jokes.entity.Language;
