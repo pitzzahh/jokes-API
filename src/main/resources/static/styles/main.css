@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --padding: 1em;
+  --light-dark-color: #6f7277;
+  --code-font-size: 0.5em;
+  --min-font-size: 0.5em;
+  --max-font-size: 1em;
+}
+
+header {
+  text-align: center;
+}
+header #api-name {
+  font-size: clamp(1.5em, 5vw, 2em);
+  font-weight: bold;
+  padding: 0.2em var(--padding);
+  color: #5f9988;
+}
+
+main #hero div {
+  text-align: left;
+}
+main #hero div .description {
+  text-align: inherit;
+  font-size: clamp(0.8em, 2vw, 1em);
+  padding: var(--padding);
+}
+main #hero div #project-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5em 0;
+  gap: 0.5em;
+  padding: 0 var(--padding);
+}
+main #hero div #project-info img {
+  height: 1em;
+  width: auto;
+}
+main .thin,
+main .medium,
+main .thick {
+  position: relative;
+  border: none;
+  background: var(--light-dark-color);
+}
+main .thin {
+  height: 0.2em;
+}
+main .medium {
+  height: 0.3em;
+}
+main .thick {
+  height: 0.4em;
+}
+main .api-reference {
+  padding: 1em;
+}
+main .api-reference .column-name {
+  padding: 0.5em;
+  font-size: clamp(0.7em, 2.5vw, 1em);
+  color: #5f9988;
+}
+main .api-reference .column-name:nth-child(odd) {
+  border: 0.5px dotted var(--light-dark-color);
+}
+main .api-reference .column-name:nth-child(even) {
+  border-top: 0.5px dotted var(--light-dark-color);
+  border-bottom: 0.5px dotted var(--light-dark-color);
+}
+main .api-reference tbody tr td {
+  padding: 0.5em;
+  font-size: clamp(0.7em, 2.5vw, 1em);
+  color: #000;
+  text-align: center;
+}
+main .api-reference tbody tr td:nth-child(odd) {
+  border: 0.5px dotted var(--light-dark-color);
+}
+main .api-reference tbody tr td:nth-child(even) {
+  border-top: 0.5px dotted var(--light-dark-color);
+  border-bottom: 0.5px dotted var(--light-dark-color);
+}
+main .api-reference tbody tr td a {
+  color: #fff;
+  text-decoration: none;
+}
+main .api-reference tbody tr td a:hover {
+  color: #5f9988;
+}
+main .endpoint h2,
+main .endpoint h3,
+main .example-response h2,
+main .example-response h3 {
+  margin: 1em 0 1em 0;
+}
+main .endpoint h3,
+main .example-response h3 {
+  color: #5f9988;
+  font-size: clamp(0.8em, 2vw, 1em);
+}
+main .endpoint pre > code,
+main .example-response pre > code {
+  color: #fff;
+  font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
+}
+main .endpoint pre > code a,
+main .example-response pre > code a {
+  color: #fff;
+  font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
+  text-decoration: none;
+}
+main .endpoint pre > code a span:hover,
+main .example-response pre > code a span:hover {
+  color: #5f9988;
+}
+main .endpoint div,
+main .endpoint pre,
+main .example-response div,
+main .example-response pre {
+  background: #6f7277;
+  border-radius: 0.2em;
+  margin: 0.5em 0;
+  padding: var(--padding);
+  align-items: center;
+  white-space: pre-wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+main .endpoint div a,
+main .example-response div a {
+  font-size: clamp(var(--min-font-size), 1vw, var(--max-font-size));
+  font-family: Consolas, monospace;
+  color: #fff;
+  text-decoration: none;
+}
+main .endpoint div a:hover ::-ms-tooltip,
+main .example-response div a:hover ::-ms-tooltip {
+  content: "Click to copy";
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5em;
+  padding-bottom: 1em;
+}
+footer p {
+  font-size: 0.75em;
+}
+footer p span {
+  color: #d33432;
+}/*# sourceMappingURL=main.css.map */
