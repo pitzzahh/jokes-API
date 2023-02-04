@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jokes API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <p id="api-name">Jokes API</p>
+    </header>
+    <main>
+      <section id="hero">
+        <div>
+          <hr class="thin" />
+          <p class="description">
+            This is a simple API that returns a random joke from a list of jokes
+            based on some categories or language or just random.
+          </p>
+
+          <hr class="thick" />
+
+          <div id="project-info">
+            <img
+              src="https://img.shields.io/github/issues/pitzzahh/jokes-API"
+              alt="Issues"
+            />
+            <img
+              src="https://img.shields.io/github/license/pitzzahh/jokes-API"
+              alt="License"
+            />
+            <img
+              src="https://img.shields.io/github/forks/pitzzahh/jokes-API"
+              alt="Forks"
+            />
+            <img
+              src="https://img.shields.io/github/stars/pitzzahh/jokes-API"
+              alt="Stars"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="sample">
+        <div class="api-reference">
+          <h2>API Reference</h2>
+          <div class="endpoint">
+            <h3 class="mapping-details">
+              Get a random joke and returns a JSON response from the API
+            </h3>
+            <pre><code><a href="https://jokes.araopj.tech/v1/random" target="_blank"
+              alt="Link to generate random joke">GET <span>https://jokes.araopj.tech/v1/random</span></a
+            ></code></pre>
+          </div>
+          <div class="example-response">
+            <h3>Example response</h3>
+            <pre><code>
+{
+  "joke": "What do you call a fake noodle? An \"impasta\".",
+  "category": "DAD_JOKE",
+  "language": "ENGLISH"
+}
+              </code></pre>
+            <pre><code>
+{
+  "joke": "Ano ang sabi ng isang kahoy sa ibang kahoy? Pakapit!",
+  "category": "ONE_LINER",
+  "language": "FILIPINO"
+}
+            </code></pre>
+          </div>
+        </div>
+      </section>
+      <hr class="medium" />
+      <section id="category-and-language">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details">
+              Get random joke based on category and language
+            </h3>
+            <pre>
+              <code>GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language</code>
+            </pre>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th class="column-name">Parameter</th>
+                <th class="column-name">Type</th>
+                <th class="column-name">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>category</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. category of joke to fetch
+                </td>
+              </tr>
+              <tr>
+                <td>language</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. language of joke to fetch
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="endpoint">
+            <h5>Sample Request</h5>
+            <pre><code>GET https://jokes.araopj.tech/v1/random?category=ANY&lang=FILIPINO</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr class="medium" />
+
+      <section id="category">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details">Get random joke based on category</h3>
+            <pre>
+              <code>GET https://jokes.araopj.tech/v1/random?category=${category}</code>
+            </pre>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th class="column-name">Parameter</th>
+                <th class="column-name">Type</th>
+                <th class="column-name">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>category</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. category of joke to fetch
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th class="column-name">Categories <br />available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ANY</td>
+              </tr>
+              <tr>
+                <td>DAD_JOKE</td>
+              </tr>
+
+              <tr>
+                <td>PUN</td>
+              </tr>
+              <tr>
+                <td>KNOCK_KNOCK</td>
+              </tr>
+              <tr>
+                <td>ONE_LINER</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="endpoint">
+            <h5>Sample Request</h5>
+            <pre><code>GET https://jokes.araopj.tech/v1/random?category=ANY</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <hr class="medium" />
+
+      <section id="language">
+        <div class="api-reference">
+          <div class="endpoint">
+            <h3 class="mapping-details">Get random joke based on language</h3>
+            <pre>
+              <code>GET https://jokes.araopj.tech/v1/random?lang=${language}</code>
+            </pre>
+          </div>
+          
+          <table>
+            <thead>
+              <tr>
+                <th class="column-name">Parameter</th>
+                <th class="column-name">Type</th>
+                <th class="column-name">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>lang</td>
+                <td>String</td>
+                <td>
+                  <strong>Not Required</strong>. language of joke to fetch
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+                <th class="column-name">Languages <br />available</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ENGLISH</td>
+              </tr>
+              <tr>
+                <td>FILIPINO</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="endpoint">
+            <h5>Sample Request</h5>
+            <pre><code>GET https://jokes.araopj.tech/v1/random?lang=FILIPINO</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p>Made with <span>&#10084;</span> by pitzzahh</p>
+      </div>
+      <div><p>Under Construction &#9881;</p></div>
+    </footer>
+  </body>
+</html>
