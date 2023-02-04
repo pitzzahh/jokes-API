@@ -21,7 +21,7 @@
       <section id="hero">
         <div>
           <hr class="thin" />
-          <p class="description">
+          <p class="description animate-from-bottom">
             This is a simple API that returns a random joke from a list of jokes
             based on some categories or language or just random.
           </p>
@@ -30,18 +30,22 @@
 
           <div id="project-info">
             <img
+              class="aniamte-from-bottom"
               src="https://img.shields.io/github/issues/pitzzahh/jokes-API"
               alt="Issues"
             />
             <img
+              class="aniamte-from-bottom"
               src="https://img.shields.io/github/license/pitzzahh/jokes-API"
               alt="License"
             />
             <img
+              class="aniamte-from-bottom"
               src="https://img.shields.io/github/forks/pitzzahh/jokes-API"
               alt="Forks"
             />
             <img
+              class="aniamte-from-bottom"
               src="https://img.shields.io/github/stars/pitzzahh/jokes-API"
               alt="Stars"
             />
@@ -51,24 +55,25 @@
 
       <section id="sample">
         <div class="api-reference">
-          <h2>API Reference</h2>
+          <h2 class="animate-from-right">API Reference</h2>
           <div class="endpoint">
-            <h3 class="mapping-details">
+            <h3 class="mapping-details animate-from-bottom">
               Get a random joke and returns a JSON response from the API
             </h3>
-            <pre><code><a href="https://jokes.araopj.tech/v1/random" target="_blank">GET <span>https://jokes.araopj.tech/v1/random</span></a
-            ></code></pre>
+            <pre>
+              <code class="aniamte-from-right"><a href="https://jokes.araopj.tech/v1/random" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random</span></a></code>
+            </pre>
           </div>
           <div class="example-response">
-            <h3>Example response</h3>
-            <pre><code>
+            <h3 class="animate-from-right">Example response</h3>
+            <pre><code class="animate-from-right">
 {
   "joke": "What do you call a fake noodle? An \"impasta\".",
   "category": "DAD_JOKE",
   "language": "ENGLISH"
 }
               </code></pre>
-            <pre><code>
+            <pre><code class="animate-from-right">
 {
   "joke": "Ano ang sabi ng isang kahoy sa ibang kahoy? Pakapit!",
   "category": "ONE_LINER",
@@ -82,15 +87,15 @@
       <section id="category-and-language">
         <div class="api-reference">
           <div class="endpoint">
-            <h3 class="mapping-details">
+            <h3 class="mapping-details animate-from-bottom">
               Get random joke based on category and language
             </h3>
             <pre>
-              <code>GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language</code>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language</code>
             </pre>
           </div>
 
-          <table>
+          <table class="animate-from-bottom">
             <thead>
               <tr>
                 <th class="column-name">Parameter</th>
@@ -116,8 +121,10 @@
             </tbody>
           </table>
           <div class="endpoint">
-            <h5>Sample Request</h5>
-            <pre><code>GET https://jokes.araopj.tech/v1/random?category=ANY&lang=FILIPINO</code></pre>
+            <h5 class="animate-from-right">Sample Request</h5>
+            <pre>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random?category=ANY&language=FILIPINO" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random?category=ANY&language=FILIPINO</span></a></code>
+            </pre>
           </div>
         </div>
       </section>
@@ -127,13 +134,15 @@
       <section id="category">
         <div class="api-reference">
           <div class="endpoint">
-            <h3 class="mapping-details">Get random joke based on category</h3>
+            <h3 class="mapping-details animate-from-bottom">
+              Get random joke based on category
+            </h3>
             <pre>
-              <code>GET https://jokes.araopj.tech/v1/random?category=${category}</code>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?category=${category}</code>
             </pre>
           </div>
 
-          <table>
+          <table class="animate-from-bottom">
             <thead>
               <tr>
                 <th class="column-name">Parameter</th>
@@ -152,7 +161,7 @@
             </tbody>
           </table>
 
-          <table>
+          <table class="animate-from-bottom">
             <thead>
               <tr>
                 <th class="column-name">Categories <br />available</th>
@@ -179,8 +188,10 @@
           </table>
 
           <div class="endpoint">
-            <h5>Sample Request</h5>
-            <pre><code>GET https://jokes.araopj.tech/v1/random?category=ANY</code></pre>
+            <h5 class="animate-from-right">Sample Request</h5>
+            <pre>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random?category=DAD_JOKE" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random?category=DAD_JOKE</span></a></code>
+            </pre>
           </div>
         </div>
       </section>
@@ -190,13 +201,13 @@
       <section id="language">
         <div class="api-reference">
           <div class="endpoint">
-            <h3 class="mapping-details">Get random joke based on language</h3>
+            <h3 class="mapping-details aniamte-from-bottom">Get random joke based on language</h3>
             <pre>
-              <code>GET https://jokes.araopj.tech/v1/random?lang=${language}</code>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?lang=${language}</code>
             </pre>
           </div>
-          
-          <table>
+
+          <table class="animate-from-bottom">
             <thead>
               <tr>
                 <th class="column-name">Parameter</th>
@@ -215,7 +226,7 @@
             </tbody>
           </table>
 
-          <table>
+          <table class="animate-from-bottom">
             <thead>
               <tr>
                 <th class="column-name">Languages <br />available</th>
@@ -232,8 +243,10 @@
           </table>
 
           <div class="endpoint">
-            <h5>Sample Request</h5>
-            <pre><code>GET https://jokes.araopj.tech/v1/random?lang=FILIPINO</code></pre>
+            <h5 class="animate-from-right">Sample Request</h5>
+            <pre>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random?language=FILIPINO" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random?language=FILIPINO</span></a></code>
+            </pre>
           </div>
         </div>
       </section>
@@ -245,5 +258,7 @@
       </div>
       <div><p>Under Construction &#9881;</p></div>
     </footer>
+
+    <script defer src="scripts/animations.js"></script>
   </body>
 </html>

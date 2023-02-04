@@ -1,0 +1,54 @@
+
+// Hiding the elements
+.animate-from-top,
+.animate-from-bottom,
+.animate-from-left,
+.animate-from-right {
+  opacity: 0;
+  filter: blur(0.0065rem);
+  transition: all $transition-amount;
+}
+
+.animate-from-top {
+  transform: translateY($translate-y-negative);
+}
+
+.animate-from-left {
+  transform: translateX(-8%);
+}
+
+.animate-from-bottom {
+  transform: translateY($translate-y-positive);
+}
+
+.animate-from-right {
+  transform: translateX(8%);
+}
+
+// Showing the elements
+.show-from-bottom,
+.show-from-top,
+.show-from-left,
+.show-from-right {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.show-from-bottom,
+.show-from-top {
+  transform: translateY(0);
+}
+
+.show-from-left,
+.show-from-right {
+  transform: translateX(0);
+}
+
+// Animating the project cards
+.pop-out {
+    transform: translate(0, 0); /* default position */
+    transition: transform 0.5s; /* enable smooth transition */
+    &:hover{
+        transform: translate($x-position, $y-position); /* move to upper left corner */
+    }
+}

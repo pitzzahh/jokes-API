@@ -80,7 +80,7 @@ main .api-reference .column-name:nth-child(even) {
 main .api-reference tbody tr td {
   padding: 0.5em;
   font-size: clamp(0.7em, 2.5vw, 1em);
-  color: #000;
+  color: #141412;
   text-align: center;
 }
 main .api-reference tbody tr td:nth-child(odd) {
@@ -99,8 +99,10 @@ main .api-reference tbody tr td a:hover {
 }
 main .endpoint h2,
 main .endpoint h3,
+main .endpoint h5,
 main .example-response h2,
-main .example-response h3 {
+main .example-response h3,
+main .example-response h5 {
   margin: 1em 0 1em 0;
 }
 main .endpoint h3,
@@ -110,24 +112,45 @@ main .example-response h3 {
 }
 main .endpoint pre > code,
 main .example-response pre > code {
-  color: #fff;
+  color: #141412;
   font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
 }
 main .endpoint pre > code a,
 main .example-response pre > code a {
-  color: #fff;
+  color: #141412;
   font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
   text-decoration: none;
 }
-main .endpoint pre > code a span:hover,
-main .example-response pre > code a span:hover {
-  color: #5f9988;
+main .endpoint pre > code a .underline,
+main .example-response pre > code a .underline {
+  position: relative;
+  text-decoration: none;
+}
+main .endpoint pre > code a .underline::before,
+main .example-response pre > code a .underline::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: width 0.2s ease-in-out;
+  background-color: #5F9988;
+  height: 0.2em;
+}
+main .endpoint pre > code a .underline:hover::before, main .endpoint pre > code a .underline:active::after,
+main .example-response pre > code a .underline:hover::before,
+main .example-response pre > code a .underline:active::after {
+  width: 100%;
+}
+main .endpoint pre > code a .underline:active,
+main .example-response pre > code a .underline:active {
+  color: #0B7CBD;
 }
 main .endpoint div,
 main .endpoint pre,
 main .example-response div,
 main .example-response pre {
-  background: #6f7277;
+  background: #CFD0D1;
   border-radius: 0.2em;
   margin: 0.5em 0;
   padding: var(--padding);
@@ -141,12 +164,8 @@ main .endpoint div a,
 main .example-response div a {
   font-size: clamp(var(--min-font-size), 1vw, var(--max-font-size));
   font-family: Consolas, monospace;
-  color: #fff;
+  color: #141412;
   text-decoration: none;
-}
-main .endpoint div a:hover ::-ms-tooltip,
-main .example-response div a:hover ::-ms-tooltip {
-  content: "Click to copy";
 }
 
 footer {
@@ -162,4 +181,60 @@ footer p {
 }
 footer p span {
   color: #d33432;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 0 10em;
+  }
+}
+.animate-from-top,
+.animate-from-bottom,
+.animate-from-left,
+.animate-from-right {
+  opacity: 0;
+  filter: blur(0.0065rem);
+  transition: all 1s;
+}
+
+.animate-from-top {
+  transform: translateY(-10%);
+}
+
+.animate-from-left {
+  transform: translateX(-8%);
+}
+
+.animate-from-bottom {
+  transform: translateY(10%);
+}
+
+.animate-from-right {
+  transform: translateX(8%);
+}
+
+.show-from-bottom,
+.show-from-top,
+.show-from-left,
+.show-from-right {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.show-from-bottom,
+.show-from-top {
+  transform: translateY(0);
+}
+
+.show-from-left,
+.show-from-right {
+  transform: translateX(0);
+}
+
+.pop-out {
+  transform: translate(0, 0); /* default position */
+  transition: transform 0.5s; /* enable smooth transition */
+}
+.pop-out:hover {
+  transform: translate(-5%, -5%); /* move to upper left corner */
 }/*# sourceMappingURL=main.css.map */

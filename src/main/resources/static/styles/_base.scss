@@ -94,7 +94,7 @@ main {
         td {
           padding: 0.5em;
           font-size: clamp(0.7em, 2.5vw, 1em);
-          color: #000;
+          color: #141412;
           text-align: center;
           &:nth-child(odd) {
             border: .5px dotted var(--light-dark-color);
@@ -119,7 +119,8 @@ main {
   .endpoint,
   .example-response {
     h2,
-    h3 {
+    h3,
+    h5 {
       margin: 1em 0 1em 0;
     }
 
@@ -128,23 +129,45 @@ main {
       font-size: clamp(0.8em, 2vw, 1em);
     }
 
-    pre > code {
-      color: #fff;
-      font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
 
+    pre > code {
+      color: #141412;
+      font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
       a {
-        color: #fff;
+        color: #141412;
         font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
         text-decoration: none;
-        span:hover {
-          color: #5f9988;
+
+        .underline {
+          position: relative;
+          text-decoration: none;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            transition: width 0.2s ease-in-out;
+            background-color: #5F9988;
+            height: 0.2em;
+          }
+
+          &:hover::before,
+          &:active::after {
+            width: 100%;
+          }
+
+          &:active {
+            color: #0B7CBD;
+          }
+
         }
       }
     }
 
     div,
     pre {
-      background: #6f7277;
+      background: #CFD0D1;
       border-radius: 0.2em;
       margin: 0.5em 0;
       padding: var(--padding);
@@ -158,14 +181,8 @@ main {
       a {
         font-size: clamp(var(--min-font-size), 1vw, var(--max-font-size));
         font-family: Consolas, monospace;
-        color: #fff;
+        color: #141412;
         text-decoration: none;
-
-        &:hover {
-          ::-ms-tooltip {
-            content: "Click to copy";
-          }
-        }
       }
     }
   }
@@ -183,5 +200,12 @@ footer {
     span {
       color: #d33432;
     }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 0 10em;
   }
 }
