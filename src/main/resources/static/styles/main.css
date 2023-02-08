@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  border: 1px solid red;
 }
 
 html {
@@ -43,15 +44,12 @@ main #hero div .description {
   padding: var(--padding);
 }
 main #hero div #project-info {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  gap: 1em;
   margin: 0.5em 0;
-  gap: 0.5em;
   padding: 0 var(--padding);
 }
 main #hero div #project-info img {
-  height: 1em;
+  height: 1.5em;
   width: auto;
 }
 main .thin,
@@ -193,6 +191,10 @@ footer p span {
 @media screen and (min-width: 768px) {
   section {
     padding: 0 10em;
+  }
+  #project-info img {
+    height: 2em;
+    width: auto;
   }
 }
 .animate-from-top,
