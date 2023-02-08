@@ -7,6 +7,14 @@ ___
 ![Forks](https://img.shields.io/github/forks/pitzzahh/jokes-API)
 ![Stars](https://img.shields.io/github/stars/pitzzahh/jokes-API)
 ![License](https://img.shields.io/github/license/pitzzahh/jokes-API)
+![Forks](https://img.shields.io/github/forks/pitzzahh/jokes-API)
+![Stars](https://img.shields.io/github/stars/pitzzahh/jokes-API)
+![Contributors](https://img.shields.io/github/contributors/pitzzahh/jokes-API)
+![Last Commit](https://img.shields.io/github/last-commit/pitzzahh/jokes-API)
+![Code size](https://img.shields.io/github/languages/code-size/pitzzahh/jokes-API)
+![Top language](https://img.shields.io/github/languages/top/pitzzahh/jokes-API)
+![Languages count](https://img.shields.io/github/languages/count/pitzzahh/jokes-API)
+![Repo size](https://img.shields.io/github/repo-size/pitzzahh/jokes-API)
 ___
 ## API Reference
 
