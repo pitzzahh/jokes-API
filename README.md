@@ -152,5 +152,5 @@ ___
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-### 🤍 Special Thanks to [render.com](https://render.com/) for providing free hosting for this project
+### 🤍 Special Thanks to [railway](https://railway.app/) for providing free hosting for this project
 
