@@ -20,6 +20,9 @@ ___
 
 #### Get a random joke and returns a JSON response from the API
 
+##### Temporary link
+- https://jokes-api-prod-production.up.railway.app
+
 ```html
  GET https://jokes.araopj.tech/v1/random
 ```
