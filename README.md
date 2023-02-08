@@ -30,14 +30,14 @@ ___
 {
   "joke": "What do you call a fake noodle? An \"impasta\".",
   "category": "DAD_JOKE",
-  "lang": "ENGLISH"
+  "language": "ENGLISH"
 }
 ```
 ```json
 {
   "joke": "Ano ang sabi ng isang kahoy sa ibang kahoy? Pakapit!",
   "category": "ONE_LINER",
-  "lang": "FILIPINO"
+  "language": "FILIPINO"
 }
 ```
 #### Get random joke based on category and language
@@ -46,10 +46,10 @@ ___
  GET https://jokes.araopj.tech/v1/random?category=${category}&language=${language}
 ```
 
-| Parameter  | Type     | Description                                 |
-|:-----------|:---------|:--------------------------------------------|
-| `category` | `String` | **Not Required**. category of joke to fetch |
-| `lang`     | `String` | **Not Required**. language of joke to fetch |
+| Parameter  | Type     | Description                             |
+|:-----------|:---------|:----------------------------------------|
+| `category` | `String` | **Required**. category of joke to fetch |
+| `language` | `String` | **Required**. language of joke to fetch |
 
 
 ##### Sample Request
@@ -122,7 +122,7 @@ Contributions are always welcome!
 {
   "joke": "What do you call a cow with no legs? Ground beef.",
   "category": "DAD_JOKE",
-  "lang": "ENGLISH"
+  "language": "ENGLISH"
 }
 ```
 ___
