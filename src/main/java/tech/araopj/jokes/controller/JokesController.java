@@ -47,31 +47,31 @@ public record JokesController(JokesService jokesService) {
     }
 
     @GetMapping("/random")
-    public Joke getRandomJoke(@RequestParam(required = false, name = "category") String category,
+    public HttpEntity<Joke> getRandomJoke(@RequestParam(required = false, name = "category") String category,
                               @RequestParam(required = false, name = "language") String language) throws ResponseStatusException {
         if (category != null && language != null) {
             validateCategory(category);
             validateLanguage(language);
-            return jokesService
+            return new HttpEntity<>(jokesService
                     .getRandomJokeByCategoryAndLanguage(Category.valueOf(category.toUpperCase()), Language.valueOf(language.toUpperCase()))
                     .orElseThrow(() -> new ResponseStatusException(
                             HttpStatus.NOT_FOUND,
                             format("No jokes found for category %s with language %s", category.toUpperCase(), language.toUpperCase())
-                    ));
+                    )));
         }
-        else if (category != null) return getRandomJokeByCategory(category);
-        else if (language != null) return getRandomJokeByLanguage(language);
+        else if (category != null) return new HttpEntity<>(getRandomJokeByCategory(category));
+        else if (language != null) return new HttpEntity<>(getRandomJokeByLanguage(language));
         else {
             jokesService
                     .getAllJokes()
                     .stream()
                     .findAny()
                     .orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "No jokes found"));
-            return jokesService.getAllJokes()
+            return new HttpEntity<>(jokesService.getAllJokes()
                     .stream()
                     .skip(new Random().nextInt(jokesService.getAllJokes().size()))
                     .findFirst()
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No jokes found"));
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No jokes found")));
         }
     }
 

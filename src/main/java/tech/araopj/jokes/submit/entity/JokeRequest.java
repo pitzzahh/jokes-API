@@ -1,13 +1,11 @@
 package tech.araopj.jokes.submit.entity;
 
 import tech.araopj.jokes.entity.Category;
-import jakarta.persistence.GeneratedValue;
 import tech.araopj.jokes.entity.Language;
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import java.util.Objects;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,7 +23,9 @@ public class JokeRequest  {
     @GeneratedValue
     private Integer id;
     private String joke;
+    @Enumerated(EnumType.STRING)
     private Category category;
+    @Enumerated(EnumType.STRING)
     private Language language;
     private Boolean approved;
 

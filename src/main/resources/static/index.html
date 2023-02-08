@@ -29,25 +29,71 @@
           <hr class="thick" />
 
           <div id="project-info">
+            <a href="https://github.com/pitzzahh/jokes-API" target="_blank"
+              ><img
+                class="animate-from-bottom"
+                src="github.svg"
+                alt="GitHub repository of this project"
+            /></a>
             <img
-              class="aniamte-from-bottom"
+              class="animate-from-bottom"
               src="https://img.shields.io/github/issues/pitzzahh/jokes-API"
               alt="Issues"
             />
             <img
-              class="aniamte-from-bottom"
+              class="animate-from-bottom"
               src="https://img.shields.io/github/license/pitzzahh/jokes-API"
               alt="License"
             />
             <img
-              class="aniamte-from-bottom"
+              class="animate-from-bottom"
               src="https://img.shields.io/github/forks/pitzzahh/jokes-API"
               alt="Forks"
             />
             <img
-              class="aniamte-from-bottom"
+              class="animate-from-bottom"
               src="https://img.shields.io/github/stars/pitzzahh/jokes-API"
               alt="Stars"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/contributors/pitzzahh/jokes-API"
+              alt="Contributors"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/last-commit/pitzzahh/jokes-API"
+              alt="Last Commit"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/languages/code-size/pitzzahh/jokes-API"
+              alt="Code Size"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/languages/top/pitzzahh/jokes-API"
+              alt="Top Language"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/languages/count/pitzzahh/jokes-API"
+              alt="Languages Count"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/repo-size/pitzzahh/jokes-API"
+              alt="Repo Size"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/github/v/release/pitzzahh/jokes-API"
+              alt="Release"
+            />
+            <img
+              class="animate-from-bottom"
+              src="https://img.shields.io/tokei/lines/github/pitzzahh/jokes-API?label=lines%20of%20code"
+              alt="Lines of code"
             />
           </div>
         </div>
@@ -61,7 +107,7 @@
               Get a random joke and returns a JSON response from the API
             </h3>
             <pre>
-              <code class="aniamte-from-right"><a href="https://jokes.araopj.tech/v1/random" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random</span></a></code>
+              <code class="animate-from-right"><a href="https://jokes.araopj.tech/v1/random" target="_blank">GET <span class="underline animate-from-right">https://jokes.araopj.tech/v1/random</span></a></code>
             </pre>
           </div>
           <div class="example-response">
@@ -91,7 +137,7 @@
               Get random joke based on category and language
             </h3>
             <pre>
-              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?category=${category}&lang=${language</code>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?category=${category}</code>
             </pre>
           </div>
 
@@ -107,16 +153,12 @@
               <tr>
                 <td>category</td>
                 <td>String</td>
-                <td>
-                  <strong>Not Required</strong>. category of joke to fetch
-                </td>
+                <td><strong>Required</strong>. category of joke to fetch</td>
               </tr>
               <tr>
                 <td>language</td>
                 <td>String</td>
-                <td>
-                  <strong>Not Required</strong>. language of joke to fetch
-                </td>
+                <td><strong>Required</strong>. language of joke to fetch</td>
               </tr>
             </tbody>
           </table>
@@ -154,9 +196,7 @@
               <tr>
                 <td>category</td>
                 <td>String</td>
-                <td>
-                  <strong>Not Required</strong>. category of joke to fetch
-                </td>
+                <td><strong>Required</strong>. category of joke to fetch</td>
               </tr>
             </tbody>
           </table>
@@ -205,7 +245,7 @@
               Get random joke based on language
             </h3>
             <pre>
-              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?lang=${language}</code>
+              <code class="animate-from-right">GET https://jokes.araopj.tech/v1/random?language=${language}</code>
             </pre>
           </div>
 
@@ -221,9 +261,7 @@
               <tr>
                 <td>lang</td>
                 <td>String</td>
-                <td>
-                  <strong>Not Required</strong>. language of joke to fetch
-                </td>
+                <td><strong>Required</strong>. language of joke to fetch</td>
               </tr>
             </tbody>
           </table>

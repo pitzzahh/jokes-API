@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  border: 1px solid red;
 }
 
 html {
@@ -45,14 +46,11 @@ main {
       }
 
       #project-info {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        gap: 1em;
         margin: 0.5em 0;
-        gap: 0.5em;
         padding: 0 var(--padding);
         img {
-          height: 1em;
+          height: 1.5em;
           width: auto;
         }
       }
@@ -138,37 +136,37 @@ main {
     }
 
     pre > code {
+      color: #141412;
+      font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
+      a {
         color: #141412;
         font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
-        a {
-          color: #141412;
-          font-size: clamp(var(--min-font-size), 2vw, var(--max-font-size));
+        text-decoration: none;
+
+        .underline {
+          position: relative;
           text-decoration: none;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            transition: width 0.2s ease-in-out;
+            background-color: #5f9988;
+            height: 0.2em;
+          }
 
-          .underline {
-            position: relative;
-            text-decoration: none;
-            &::before {
-              content: "";
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 0;
-              transition: width 0.2s ease-in-out;
-              background-color: #5f9988;
-              height: 0.2em;
-            }
+          &:hover::before,
+          &:active::after {
+            width: 100%;
+          }
 
-            &:hover::before,
-            &:active::after {
-              width: 100%;
-            }
-
-            &:active {
-              color: #0b7cbd;
-            }
+          &:active {
+            color: #0b7cbd;
           }
         }
+      }
     }
 
     div,
@@ -211,5 +209,12 @@ footer {
 @media screen and (min-width: 768px) {
   section {
     padding: 0 10em;
+  }
+
+  #project-info {
+    img {
+      height: 2em;
+      width: auto;
+    }
   }
 }

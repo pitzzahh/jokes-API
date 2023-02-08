@@ -126,7 +126,7 @@ public interface Utility {
                         .language(Language.ENGLISH).build(),
                 Joke.builder().joke("""
                                 Knock! Knock!
-                                Who’s there?
+                                Who\\’s there?
                                 Tiger Leon Pating Kambing
                                 Tiger Leon Pating Kambing who?
                                 Kailan (Kailan)
@@ -137,7 +137,7 @@ public interface Utility {
                         .language(Language.FILIPINO).build(),
                 Joke.builder().joke("""
                                 Knock! Knock!
-                                Who’s there?
+                                Who\\’s there?
                                 New Zealand!
                                 New Zealand who?
                                 New Zealand ka sa mundong ito, laking tuwa ng magulang mo…""")
