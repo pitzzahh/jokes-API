@@ -48,5 +48,14 @@ public enum Category {
     /**
      * A category for animal jokes
      */
-    ANIMAL
+    ANIMAL,
+    /**
+     * A category for irony jokes
+     */
+    IRONY,
+    /**
+     * A category for parody jokes
+     */
+    PARODY
+
 }
