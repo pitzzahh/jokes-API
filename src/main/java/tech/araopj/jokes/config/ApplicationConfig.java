@@ -39,15 +39,9 @@ public class ApplicationConfig {
             @Override
             public void addCorsMappings(@NonNull CorsRegistry registry) {
                 registry
-                        .addMapping("/v*/**")
+                        .addMapping("/**")
                         .allowedOrigins("*")
-                        .allowedMethods("GET", "POST")
-                        .allowedHeaders("Access-Control-Allow-Headers",
-                                "Access-Control-Allow-Origin",
-                                "Access-Control-Request-Method",
-                                "Access-Control-Request-Headers",
-                                "Origin","Cache-Control",
-                                "Content-Type");
+                        .allowedMethods("GET", "POST");
             }
         };
     }
