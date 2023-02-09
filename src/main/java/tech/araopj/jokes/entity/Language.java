@@ -34,6 +34,10 @@ public enum Language {
      */
     FILIPINO,
     /**
+     * A language for Japanese jokes
+     */
+    JAPANESE,
+    /**
      * A language for any language
      */
     ANY
