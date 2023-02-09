@@ -19,8 +19,16 @@ public record JokeRequestService(
         return jokeRequestRepository.getJokeRequestByApprovedNot();
     }
 
+    public Collection<JokeRequest> getAllApprovedJokeRequests() {
+        return jokeRequestRepository.getJokeRequestByApproved();
+    }
+
     public Optional<JokeRequest> doesJokeAlreadySubmitted(String joke) {
         return jokeRequestRepository.findJokeRequestByJoke(joke);
+    }
+
+    public void deleteJokeRequestById(int id) {
+        jokeRequestRepository.deleteJokeRequestById(id);
     }
 
     public HttpEntity<String> submitJoke(JokeRequestBody jokeRequestBody) {
