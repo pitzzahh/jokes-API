@@ -20,5 +20,3 @@ spring:
   security:
     user:
       password: possword
-server:
-  port: 8081
