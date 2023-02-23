@@ -4,3 +4,10 @@
  | |_| | (_) |   <  __/\__ \
   \___/ \___/|_|\_\___||___/
                    >>> API for random jokes <<<
+
+Application Name: ${AnsiColor.BRIGHT_GREEN}${spring.application.name}${AnsiColor.DEFAULT}
+Application Version: ${AnsiColor.BRIGHT_GREEN}${spring.application.version}${AnsiColor.DEFAULT}
+::${AnsiColor.BRIGHT_GREEN} Spring Boot${AnsiColor.BRIGHT_CYAN}${spring-boot.formatted-version}${AnsiColor.DEFAULT} ::
+${AnsiColor.BRIGHT_GREEN}JVM:${AnsiColor.DEFAULT}${AnsiColor.BRIGHT_CYAN} ${java.version} ${AnsiColor.DEFAULT}(${AnsiColor.BRIGHT_GREEN}${java.vendor} ${AnsiColor.BLUE}${java.vm.name} ${AnsiColor.BRIGHT_MAGENTA}${java.vm.version}${AnsiColor.DEFAULT})
+--> Created by: ${AnsiColor.BRIGHT_CYAN}Peter John Arao
+${AnsiColor.DEFAULT}
