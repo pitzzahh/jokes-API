@@ -54,6 +54,9 @@ public record JokesController(JokesService jokesService) {
             @Validated
             @RequestParam(required = false, name = "language") String language
     ) throws ResponseStatusException {
+        if (jokesService.getAllJokes().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No jokes found");
+        }
         if (category != null && language != null) {
             validateCategory(category);
             validateLanguage(language);
@@ -62,9 +65,9 @@ public record JokesController(JokesService jokesService) {
                     .orElseThrow(() -> new ResponseStatusException(
                             HttpStatus.NOT_FOUND,
                             format("No jokes found for category %s with language %s", category.toUpperCase(), language.toUpperCase())
-                    )));
-        }
-        else if (category != null) return new HttpEntity<>(getRandomJokeByCategory(category));
+                    ))
+            );
+        } else if (category != null) return new HttpEntity<>(getRandomJokeByCategory(category));
         else if (language != null) return new HttpEntity<>(getRandomJokeByLanguage(language));
         else {
             jokesService
