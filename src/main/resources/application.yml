@@ -1,14 +1,13 @@
 spring:
   application:
     name: jokes-api
-    version: 0.0.2
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:jokes
     username:
     password:
   jpa:
-    database-platform:
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     open-in-view: true
     hibernate:
@@ -20,5 +19,5 @@ spring:
   security:
     user:
       password: possword
-server:
-  port: 8081
+app:
+  version: 0.0.2
