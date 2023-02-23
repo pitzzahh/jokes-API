@@ -24,12 +24,14 @@
 
 package tech.araopj.jokes.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.util.concurrent.CopyOnWriteArrayList;
 import tech.araopj.jokes.entity.Category;
 import tech.araopj.jokes.entity.Language;
 import java.util.stream.Collectors;
+import java.util.Collection;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,15 +40,15 @@ import java.util.List;
 public class ResourceController {
 
     @GetMapping("/categories")
-    public List<Category> getCategories() {
+    public Collection<Category> getCategories() {
         return Arrays.stream(Category.values())
-                .collect(Collectors.toList());
+                .collect(Collectors.toCollection(CopyOnWriteArrayList::new));
     }
 
     @GetMapping("/languages")
     public List<Language> getLanguages() {
         return Arrays.stream(Language.values())
-                .collect(Collectors.toList());
+                .collect(Collectors.toCollection(CopyOnWriteArrayList::new));
     }
 
 }
