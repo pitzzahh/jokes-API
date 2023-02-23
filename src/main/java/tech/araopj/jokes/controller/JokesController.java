@@ -35,9 +35,7 @@ import tech.araopj.jokes.entity.Language;
 import tech.araopj.jokes.entity.Category;
 import static java.lang.String.format;
 import tech.araopj.jokes.entity.Joke;
-import java.util.Collection;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 @RestController
@@ -85,16 +83,6 @@ public record JokesController(JokesService jokesService) {
     @RequestMapping("/")
     public String index() {
         return "index.html";
-    }
-
-    @RequestMapping("/categories")
-    public HttpEntity<Collection<Category>> getCategories() {
-        return new HttpEntity<>(List.of(Category.values()));
-    }
-
-    @RequestMapping("/languages")
-    public HttpEntity<Collection<Language>> getLanguages() {
-        return new HttpEntity<>(List.of(Language.values()));
     }
 
     private Joke getRandomJokeByCategory(String category) {
