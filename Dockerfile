@@ -11,7 +11,7 @@ RUN mvn clean package -DskipTests
 FROM openjdk:18-jdk-slim
 
 # Copy the compiled jar file from the build stage
-COPY --from=build /target/jokes-API-0.0.2.jar app.jar
+COPY --from=build /target/*.jar app.jar
 
 EXPOSE 8080
 # Set the default command to run the jar file

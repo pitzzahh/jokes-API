@@ -1,14 +1,13 @@
 spring:
   application:
     name: jokes-api
-    version: 0.0.2
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:jokes
     username:
     password:
   jpa:
-    database-platform:
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     open-in-view: true
     hibernate:
@@ -19,4 +18,10 @@ spring:
     exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
   security:
     user:
+<<<<<<< HEAD:src/main/resources/application.yml
       password: possword
+app:
+  version: 0.0.2
+=======
+      password: possword
+>>>>>>> main:src/main/resources/application.yml.sample
