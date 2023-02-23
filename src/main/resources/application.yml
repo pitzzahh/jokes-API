@@ -1,6 +1,7 @@
 spring:
   application:
     name: jokes-api
+    version: 0.0.2
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:jokes
@@ -19,3 +20,5 @@ spring:
   security:
     user:
       password: possword
+server:
+  port: 8081
