@@ -24,7 +24,7 @@ public interface JokeRequestRepository extends JpaRepository<JokeRequest, Intege
     @Modifying
     @Transactional
     @Query("DELETE FROM joke_requests j WHERE j.id = ?1")
-    int deleteJokeRequestById(long id);
+    void deleteJokeRequestById(long id);
 
     @Modifying
     @Query("UPDATE joke_requests j SET j.approved = true WHERE j.id = ?1")

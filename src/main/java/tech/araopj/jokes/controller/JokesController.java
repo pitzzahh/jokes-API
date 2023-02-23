@@ -26,6 +26,7 @@ package tech.araopj.jokes.controller;
 
 import static io.github.pitzzahh.util.utilities.SecurityUtil.decrypt;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import tech.araopj.jokes.service.JokesService;
 import org.springframework.http.HttpEntity;
@@ -44,13 +45,17 @@ import java.util.Random;
 public record JokesController(JokesService jokesService) {
 
     @GetMapping("/save-all")
-    public HttpEntity<String> saveAll(@RequestParam("key") String key) {
+    public HttpEntity<String> saveAll(@Validated @RequestParam("key") String key) {
         return key.equals(decrypt("IVA0c3NXMHJkIQ==")) ? new HttpEntity<>(jokesService.saveAll().toString()) : new HttpEntity<>(HttpStatus.FORBIDDEN.name());
     }
 
     @GetMapping("/random")
-    public HttpEntity<Joke> getRandomJoke(@RequestParam(required = false, name = "category") String category,
-                              @RequestParam(required = false, name = "language") String language) throws ResponseStatusException {
+    public HttpEntity<Joke> getRandomJoke(
+            @Validated
+            @RequestParam(required = false, name = "category") String category,
+            @Validated
+            @RequestParam(required = false, name = "language") String language
+    ) throws ResponseStatusException {
         if (category != null && language != null) {
             validateCategory(category);
             validateLanguage(language);
